@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smorodina — интернет-магазин | Портфолио</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="assets/favicon/site.webmanifest">
+<link rel="stylesheet" href="css/style.css?v=69">
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+    <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
+    <feComponentTransfer in="turbulence" result="mapped">
+      <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5"/>
+      <feFuncG type="gamma" amplitude="0" exponent="1" offset="0"/>
+      <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5"/>
+    </feComponentTransfer>
+    <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap"/>
+    <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
+      <fePointLight x="-200" y="-200" z="300"/>
+    </feSpecularLighting>
+    <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage"/>
+    <feDisplacementMap in="SourceGraphic" in2="softMap" scale="100" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<div class="site-dots" aria-hidden="true"></div>
+
+<header class="site-header">
+  <nav class="site-header__inner">
+    <a href="index.html" class="site-header__logo" aria-label="На главную"></a>
+    <a href="index.html#about" class="site-header__link" data-en="About">Обо мне</a>
+    <a href="index.html#services" class="site-header__link" data-en="Services">Услуги</a>
+    <a href="index.html#cases" class="site-header__link" data-en="Projects">Проекты</a>
+    <div class="site-header__lang">
+      <button type="button" class="site-header__lang-btn" id="langToggle" aria-haspopup="true" aria-expanded="false">
+        <span id="langCode">RU</span>
+        <svg class="site-header__lang-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="site-header__lang-menu" id="langMenu">
+        <button type="button" class="site-header__lang-option is-active" data-lang="ru" data-code="RU">Русский</button>
+        <button type="button" class="site-header__lang-option" data-lang="en" data-code="EN">English</button>
+      </div>
+    </div>
+    <a href="#contacts" class="site-header__cta js-scroll-center" data-en="Contact Me">Написать мне</a>
+  </nav>
+</header>
+
+<button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+  <span class="mobile-menu-toggle__icon" aria-hidden="true">
+    <img src="assets/decor/icon-menu.svg" alt="" class="mobile-menu-toggle__icon-img mobile-menu-toggle__icon-img--menu">
+    <img src="assets/decor/icon-close.svg" alt="" class="mobile-menu-toggle__icon-img mobile-menu-toggle__icon-img--close">
+  </span>
+</button>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu__inner">
+    <a href="index.html" class="mobile-menu__logo" aria-label="На главную"></a>
+    <nav class="mobile-menu__nav">
+      <a href="index.html#about" class="mobile-menu__link" data-en="About">Обо мне</a>
+      <a href="index.html#services" class="mobile-menu__link" data-en="Services">Услуги</a>
+      <a href="index.html#cases" class="mobile-menu__link" data-en="Projects">Проекты</a>
+      <div class="mobile-menu__card">
+        <div class="mobile-menu__card-bg" aria-hidden="true">
+          <img src="assets/decor/gradient-hero-1.png" class="mobile-menu__card-gradient mobile-menu__card-gradient--top" alt="">
+          <img src="assets/decor/gradient-hero-2.png" class="mobile-menu__card-gradient mobile-menu__card-gradient--bottom" alt="">
+        </div>
+        <p class="mobile-menu__card-title" data-en-html="Need a website?&lt;br&gt;&lt;span class='mobile-menu__card-title-accent'&gt;Write to me&lt;/span&gt;">Нужен сайт<br><span class="mobile-menu__card-title-accent">Напишите мне</span></p>
+        <div class="mobile-menu__email-row">
+          <a href="mailto:me@ishtylecheva.ru" class="cta__email-link">me@ishtylecheva.ru</a>
+          <span class="copy3d">
+            <button type="button" class="cta__copy-btn copy3d__btn" aria-label="Скопировать email" data-copy="me@ishtylecheva.ru">
+              <span class="copy3d__back" aria-hidden="true"></span>
+              <span class="copy3d__front">
+                <svg class="copy3d__icon copy3d__icon--copy" width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M41.499 31.2838C41.499 31.2756 41.499 31.2674 45.532 31.2591C49.5649 31.2507 57.6308 31.2425 64.5588 31.1558C71.4867 31.0691 77.0323 30.9041 80.2408 30.8867C85.2582 30.8595 86.2188 31.2352 86.606 31.3747C86.8009 31.445 86.9241 31.6597 86.9758 40.1591C87.0276 48.6585 86.9866 65.4733 86.9425 74.3123C86.8984 83.1514 86.8524 83.5052 86.7932 83.8944C86.5325 85.6102 86.2346 87.4548 86.1028 88.8065C86.0562 89.2848 85.7817 89.2955 81.5253 89.4634C77.2688 89.6312 68.9698 89.9442 62.6663 90.201C56.3629 90.4578 52.3064 90.6489 49.5526 90.6702C45.4686 90.7017 42.9947 90.278 41.067 90.0767C38.8379 89.844 37.8527 89.4089 37.396 89.2191C37.1825 89.1304 37.056 88.9533 37.0134 88.7111C36.9707 88.4688 37.0285 88.1402 37.2087 79.3329C37.3889 70.5256 37.6898 53.2496 37.873 44.2212C38.0563 35.1929 38.1128 34.9357 38.2114 34.5658C38.6683 32.8514 39.2193 31.7687 40.0701 31.1685C40.3372 31.0445 40.6265 30.9453 40.8776 30.866C41.1287 30.7866 41.3329 30.7301 41.5432 30.6719" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M68.9619 31.4095C68.9619 31.3949 68.9619 31.3803 68.9752 28.3157C68.9885 25.251 69.015 19.1367 68.989 15.7677C68.9596 11.959 68.7729 11.2705 68.591 10.8635C68.4985 10.6564 68.1628 10.6023 61.2946 10.775C54.4264 10.9476 40.9738 11.3881 33.3131 11.7379C25.6524 12.0878 24.1912 12.3337 22.8088 12.5249C18.0928 13.1773 16.2768 13.3919 16.0481 13.4509C15.8044 13.5138 16.5497 14.0997 16.8558 15.1847C17.0619 15.9152 17.2445 17.0429 17.2425 23.8708C17.2405 30.6988 17.0161 43.2009 16.9764 50.2848C16.9368 57.3688 17.0888 58.6556 17.2256 60.2315C17.5204 63.6298 17.6888 65.6925 18.0751 65.9629C18.7312 66.4222 20.6201 66.2582 23.6403 66.5668C25.4254 66.7493 27.7488 66.6731 30.0544 66.4983C32.3601 66.3236 34.5842 65.973 35.8275 65.7751C37.0708 65.5772 37.266 65.5428 37.467 65.5072" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg class="copy3d__icon copy3d__icon--check" width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.1719 49.6677C16.1719 49.646 16.4997 49.7395 17.9575 50.6841C21.2219 52.7992 24.3247 56.0129 26.8642 58.39C29.008 60.3967 31.5452 62.5879 34.3521 65.4886C37.166 68.3965 39.0213 70.1573 39.6679 70.6216C39.9458 70.8212 40.3242 70.5348 44.3039 65.7073C48.2836 60.8798 55.9049 51.4143 62.2121 44.1616C68.5193 36.9089 73.2814 32.1558 76.5132 28.8443C79.745 25.5329 81.302 23.807 82.7162 21.8091" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+          </span>
+        </div>
+      </div>
+    </nav>
+    <div class="mobile-menu__lang">
+      <button type="button" class="mobile-menu__lang-btn is-active" data-lang="ru" data-code="RU">RU</button>
+      <button type="button" class="mobile-menu__lang-btn" data-lang="en" data-code="EN">EN</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<section class="project-hero">
+  <div class="project-hero__blobs" aria-hidden="true">
+    <img src="assets/decor/gradient-hero-1.png" class="project-hero__gradient project-hero__gradient--tl" alt="">
+    <img src="assets/decor/gradient-hero-2.png" class="project-hero__gradient project-hero__gradient--br" alt="">
+  </div>
+  <div class="project-hero__inner">
+    <nav class="project-hero__breadcrumb" aria-label="Хлебные крошки">
+      <a href="index.html" data-en="Home">Главная</a> / <span>Smorodina</span>
+    </nav>
+    <div class="project-hero__content reveal reveal--rise" style="--d:0s">
+      <div class="project-hero__tags">
+        <span class="project-tag">Bubble</span>
+        <span class="project-tag">E-commerce</span>
+        <span class="project-tag">Google Maps API</span>
+      </div>
+
+      <h1 class="project-hero__title" data-en-html="Smorodina — &lt;span class='section-title--accent'&gt;Online Store&lt;/span&gt;">Smorodina — <span class="section-title--accent">интернет-магазин</span></h1>
+
+      <p class="project-hero__lede" data-en="A functional replica of the real Smorodina marketplace, built in Bubble with custom user flows for buyers and sellers.">Функциональная копия реального маркетплейса Smorodina, реализованная в Bubble с пользовательскими сценариями для покупателей и продавцов.</p>
+
+      <div class="project-hero__actions">
+        <a href="https://test-44120.bubbleapps.io/version-test/" target="_blank" rel="noopener" class="btn3d btn3d--primary">
+          <span class="btn3d__back"></span>
+          <span class="btn3d__front" data-en="View Site">Смотреть сайт</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="project-hero__media">
+      <div class="project-hero__visual-wrap">
+        <div class="project-media-row__video-frame project-media-row__video-frame--tilted reveal" style="--d:.1s" aria-hidden="true"></div>
+        <div class="project-visual reveal reveal--from-right" style="--d:.26s">
+          <video muted loop playsinline>
+            <source src="assets/video/smorodina/hero.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <p class="project-note reveal" style="--d:.34s" data-en="Training project. A copy of a real online store. Not commercial work.">Учебный проект. Копия реального интернет-магазина. Не коммерческая работа.</p>
+    </div>
+  </div>
+</section>
+
+<section class="project-section">
+  <div class="project-section__inner">
+    <div class="project-media-row">
+      <div class="project-media-row__video-wrap reveal reveal--from-left" style="--d:0s">
+        <div class="project-media-row__video">
+          <video muted loop playsinline>
+            <source src="assets/video/smorodina/feature-1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="project-media-row__copy reveal reveal--rise" style="--d:.1s">
+        <h3 class="project-media-row__title" data-en-html="Built the &lt;span class='section-title--accent'&gt;Catalog&lt;/span&gt;">Собрала <span class="section-title--accent">каталог</span></h3>
+        <p class="project-media-row__text" data-en="Developed a catalog with search, filtering, sorting, and pagination, so buyers can quickly find the product they need among the full range.">Разработала каталог с поиском, фильтрацией, сортировкой и пагинацией, чтобы покупатель быстро находил нужный товар среди всего ассортимента.</p>
+      </div>
+    </div>
+
+    <div class="project-media-row">
+      <div class="project-media-row__copy reveal reveal--rise" style="--d:0s">
+        <img src="assets/decor/line-hero.png" class="project-media-row__check" alt="" aria-hidden="true">
+        <h3 class="project-media-row__title" data-en-html="Registration &lt;span class='section-title--accent'&gt;and Login&lt;/span&gt;">Регистрация <span class="section-title--accent">и вход</span></h3>
+        <p class="project-media-row__text" data-en="Set up email registration and login, a personal account, and a wishlist, so users can quickly create an account, save products they like, and come back to them anytime.">Настроила регистрацию и авторизацию через email, личный кабинет и избранное, чтобы пользователь быстро создавал аккаунт, сохранял понравившиеся товары и возвращался к ним в любой момент.</p>
+      </div>
+      <div class="project-media-row__video-wrap reveal reveal--from-right" style="--d:.1s">
+        <div class="project-media-row__video">
+          <video muted loop playsinline>
+            <source src="assets/video/smorodina/feature-2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-media-row">
+      <div class="project-media-row__video-wrap project-media-row__video-wrap--tilted reveal reveal--from-left" style="--d:0s">
+        <div class="project-media-row__video-frame project-media-row__video-frame--tilted" aria-hidden="true"></div>
+        <div class="project-media-row__video">
+          <video muted loop playsinline>
+            <source src="assets/video/smorodina/feature-3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="project-media-row__copy reveal reveal--rise" style="--d:.1s">
+        <h3 class="project-media-row__title" data-en-html="&lt;span class='section-title--accent'&gt;Checkout&lt;/span&gt;">Оформление <span class="section-title--accent">заказа</span></h3>
+        <p class="project-media-row__text" data-en="Integrated Stripe payments and the Google Maps API. Checkout includes payment and delivery address selection on a map.">Подключила платежи через Stripe и интеграцию с Google Maps API. Оформление заказа с оплатой и выбором адреса доставки на карте.</p>
+      </div>
+    </div>
+
+    <div class="project-media-row">
+      <div class="project-media-row__copy reveal reveal--rise" style="--d:0s">
+        <h3 class="project-media-row__title" data-en-html="Built &lt;span class='section-title--accent'&gt;Search&lt;/span&gt;">Реализовала <span class="section-title--accent">поиск</span></h3>
+        <p class="project-media-row__text" data-en="Set up live catalog search: results load as you type and appear in a dropdown panel with the product's photo, name, and price. Items can be added to the cart straight from search, without opening the product page.">Настроила живой поиск по каталогу: результаты подгружаются по мере ввода запроса и отображаются в выпадающей панели с фото, названием и ценой товара. Добавить товар в корзину можно сразу из поиска, не переходя на страницу карточки.</p>
+      </div>
+      <div class="project-media-row__video-wrap reveal reveal--from-right" style="--d:.1s">
+        <div class="project-media-row__video">
+          <video muted loop playsinline>
+            <source src="assets/video/smorodina/feature-4.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-final-video__actions">
+      <a href="index.html#cases" class="btn3d btn3d--outline">
+        <span class="btn3d__back"></span>
+        <span class="btn3d__front" data-en="View Projects">Смотреть проекты</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contacts">
+  <picture>
+    <source media="(max-width: 639px)" srcset="assets/decor/line-footer-mobile.svg">
+    <img src="assets/decor/line-footer.svg" class="cta__line" alt="" aria-hidden="true">
+  </picture>
+  <div class="cta__bg" aria-hidden="true">
+    <img src="assets/decor/gradient-hero-2.png" class="cta__gradient cta__gradient--top" alt="">
+    <div class="cta__gradient-bottom-wrap">
+      <img src="assets/decor/gradient-hero-1.png" class="cta__gradient cta__gradient--bottom" alt="">
+    </div>
+  </div>
+
+  <div class="cta__inner">
+    <div class="cta__content reveal" style="--d:0s">
+      <h2 class="cta__title" data-en-html="Need a website or &lt;span class='section-title--accent'&gt;online store?&lt;/span&gt;">Нужен сайт или <span class="section-title--accent">интернет‑магазин?</span></h2>
+      <p class="cta__text" data-en="I respond within 24 hours. Send me your brief or project details, and I'll clarify the specifics and give you an estimate of how long the site will take to build.">Отвечаю в течение 24 часов. Присылайте бриф или информацию о проекте, и я уточню детали и скажу, сколько предварительно времени займёт создание сайта.</p>
+      <div class="cta__actions">
+        <a href="mailto:me@ishtylecheva.ru" class="btn3d btn3d--primary cta__btn">
+          <span class="btn3d__back"></span>
+          <span class="btn3d__front" data-en="Send Email">Отправить email</span>
+        </a>
+        <div class="cta__email-row">
+          <a href="mailto:me@ishtylecheva.ru" class="cta__email-link">me@ishtylecheva.ru</a>
+          <span class="copy3d">
+            <button type="button" class="cta__copy-btn copy3d__btn" aria-label="Скопировать email" data-copy="me@ishtylecheva.ru">
+              <span class="copy3d__back" aria-hidden="true"></span>
+              <span class="copy3d__front">
+                <svg class="copy3d__icon copy3d__icon--copy" width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M41.499 31.2838C41.499 31.2756 41.499 31.2674 45.532 31.2591C49.5649 31.2507 57.6308 31.2425 64.5588 31.1558C71.4867 31.0691 77.0323 30.9041 80.2408 30.8867C85.2582 30.8595 86.2188 31.2352 86.606 31.3747C86.8009 31.445 86.9241 31.6597 86.9758 40.1591C87.0276 48.6585 86.9866 65.4733 86.9425 74.3123C86.8984 83.1514 86.8524 83.5052 86.7932 83.8944C86.5325 85.6102 86.2346 87.4548 86.1028 88.8065C86.0562 89.2848 85.7817 89.2955 81.5253 89.4634C77.2688 89.6312 68.9698 89.9442 62.6663 90.201C56.3629 90.4578 52.3064 90.6489 49.5526 90.6702C45.4686 90.7017 42.9947 90.278 41.067 90.0767C38.8379 89.844 37.8527 89.4089 37.396 89.2191C37.1825 89.1304 37.056 88.9533 37.0134 88.7111C36.9707 88.4688 37.0285 88.1402 37.2087 79.3329C37.3889 70.5256 37.6898 53.2496 37.873 44.2212C38.0563 35.1929 38.1128 34.9357 38.2114 34.5658C38.6683 32.8514 39.2193 31.7687 40.0701 31.1685C40.3372 31.0445 40.6265 30.9453 40.8776 30.866C41.1287 30.7866 41.3329 30.7301 41.5432 30.6719" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M68.9619 31.4095C68.9619 31.3949 68.9619 31.3803 68.9752 28.3157C68.9885 25.251 69.015 19.1367 68.989 15.7677C68.9596 11.959 68.7729 11.2705 68.591 10.8635C68.4985 10.6564 68.1628 10.6023 61.2946 10.775C54.4264 10.9476 40.9738 11.3881 33.3131 11.7379C25.6524 12.0878 24.1912 12.3337 22.8088 12.5249C18.0928 13.1773 16.2768 13.3919 16.0481 13.4509C15.8044 13.5138 16.5497 14.0997 16.8558 15.1847C17.0619 15.9152 17.2445 17.0429 17.2425 23.8708C17.2405 30.6988 17.0161 43.2009 16.9764 50.2848C16.9368 57.3688 17.0888 58.6556 17.2256 60.2315C17.5204 63.6298 17.6888 65.6925 18.0751 65.9629C18.7312 66.4222 20.6201 66.2582 23.6403 66.5668C25.4254 66.7493 27.7488 66.6731 30.0544 66.4983C32.3601 66.3236 34.5842 65.973 35.8275 65.7751C37.0708 65.5772 37.266 65.5428 37.467 65.5072" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg class="copy3d__icon copy3d__icon--check" width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.1719 49.6677C16.1719 49.646 16.4997 49.7395 17.9575 50.6841C21.2219 52.7992 24.3247 56.0129 26.8642 58.39C29.008 60.3967 31.5452 62.5879 34.3521 65.4886C37.166 68.3965 39.0213 70.1573 39.6679 70.6216C39.9458 70.8212 40.3242 70.5348 44.3039 65.7073C48.2836 60.8798 55.9049 51.4143 62.2121 44.1616C68.5193 36.9089 73.2814 32.1558 76.5132 28.8443C79.745 25.5329 81.302 23.807 82.7162 21.8091" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+          </span>
+        </div>
+      </div>
+      <div class="cta__socials">
+        <a href="https://t.me/e_ishty" target="_blank" rel="noopener" class="social-circle" aria-label="Telegram">
+          <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.5216 43.4109L12 45.5C12 45.5 6.85486 47.5024 6.0013 48.5C5.83851 48.6903 5.77318 49.1016 6.01274 49.2204C7.06854 49.7443 19.5 54.1156 20.5 54.5578C21.5 55 27.9867 56.9551 28.5421 56.5273C29.1549 56.0552 30.0319 55.3158 31.1139 54.5578C32.9751 53.254 35.2906 51.488 37.3722 50.294C38.5993 49.5902 42.5143 46.7644 47.3735 43.4272C49.7276 41.8104 51.7412 40.2707 59.0832 36.4357C63.7647 33.9904 68.932 30.2148 68.296 31.6567C68.141 32.008 67.0496 33.4904 64.1078 36.2874C61.7551 38.5245 59.7228 40.308 55.7787 44.2078C52.4331 47.5158 46.5813 53.4256 43.1003 56.8031C38.655 61.1163 37.194 62.401 37.4454 62.9778C37.6955 63.5515 38.1271 64.0609 38.6141 64.4672C39.8799 65.5231 42.2354 67.011 47.4879 71.0933C50.0005 73.0461 53.4857 75.0572 56.9603 77.5843C61.2988 80.7398 67.0774 88.5544 69.3275 86.3745C69.7598 85.9557 70.2721 84.555 70.8839 81.0934C71.308 78.6935 71.8492 75.0459 73.4576 67.2806C75.0661 59.5153 77.663 47.9818 79.5525 40.4572C81.442 32.9327 82.5333 29.4994 83.4272 27.2262C84.7786 23.7898 85.3901 21.7206 85.2444 20.058C85.1209 18.6493 84.9774 17.3166 84.2465 17.1196C83.6153 16.9495 80.8671 17.2582 77.0911 17.992C75.0354 18.3916 69.5994 20.103 62.4611 22.7161C59.6253 23.7542 56.9587 24.4739 53.5052 25.9203C50.25 27.2835 47.1516 28.6188 42.7377 30.4073C38.6488 32.0641 34.1258 34.4465 29.0722 36.9781C22.9565 40.0417 19.0512 42.2422 16.5216 43.4109Z" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/evgenia-ishtylecheva-2a24bb366/" target="_blank" rel="noopener" class="social-circle" aria-label="LinkedIn">
+          <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.7689 31.7464C15.7689 31.7639 15.7689 31.7813 15.613 39.8722C15.4571 47.963 15.1453 64.1266 15.0242 73.2182C14.9032 82.3097 14.9822 83.8395 15.0433 84.7464C15.1044 85.6534 15.1452 85.8912 15.4095 86.1981C16.0722 86.9675 16.8481 87.4321 17.2909 87.7078C19.3132 88.9666 23.8749 86.9455 26.2312 86.9053C26.7007 86.8973 27.0093 87.0489 27.1952 86.9663C27.3811 86.8837 27.4335 86.611 27.5656 82.5125C27.6978 78.414 27.908 70.498 27.952 62.271C27.9959 54.044 27.8671 45.7458 27.8171 40.5041C27.767 35.2625 27.7997 33.3288 26.1062 32.3206C20.9922 31.2884 17.1949 31.2213 16.5927 31.1547C16.2638 31.1306 15.8873 31.1259 15.5166 31.1201" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.3985 21.1183C17.911 21.1378 23.5035 21.015 25.8421 19.9132C26.5558 19.577 26.8963 19.0471 27.2861 18.1826C28.5146 15.4587 27.7928 12.7837 27.2567 11.5619C26.6727 10.2312 25.4289 9.56846 23.5214 8.63338C21.3164 7.55249 17.3098 8.40724 15.7055 9.11092C14.5745 9.60703 14.3472 11.0439 14.0613 13.0498C13.6344 16.0441 14.6796 17.7353 15.1356 18.6256C15.2651 18.8268 15.4138 19.0155 15.5651 19.2052C15.7164 19.3948 15.8657 19.5796 16.3177 19.9569" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M39.7553 28.5648C39.7553 28.5734 39.7553 28.5819 39.7553 33.102C39.7553 37.622 39.7553 46.6533 39.5723 54.6132C39.3894 62.5731 39.0235 69.1881 38.9683 74.3888C38.9131 79.5895 39.1797 83.1754 39.4315 85.0765C39.6834 86.9776 39.9125 87.0852 40.452 87.1507C43.2002 87.4842 45.2491 87.6122 48.0795 87.7245C48.6487 87.747 48.8861 87.7856 49.0729 87.7068C49.2598 87.628 49.3889 87.4293 50.0292 82.088C50.6695 76.7467 51.817 66.2686 52.6654 59.9078C53.7756 51.5841 54.6673 49.357 54.906 48.7962C55.4095 47.6135 56.5467 46.4295 58.027 45.2048C60.1388 43.4576 63.051 43.6103 64.7295 43.9147C67.5971 44.4346 70.6154 48.4115 71.516 50.8075C72.1131 52.3961 72.6838 55.4612 73.2183 61.9615C73.7527 68.4619 74.0669 78.3573 74.3038 83.3632C74.5408 88.3692 74.6908 88.1858 75.6337 88.0882C80.3023 87.6046 81.6957 88.0497 83.0565 87.7388C83.6072 87.613 83.5485 86.8025 83.8479 84.1611C84.1473 81.5197 84.7232 76.8805 85.1544 69.8965C85.5856 62.9124 85.8546 53.7241 85.9496 48.7744C86.0528 43.393 85.4392 41.6519 84.6669 39.4272C83.853 37.0826 82.3022 35.4469 79.4686 33.1154C77.6967 31.6574 75.5222 30.7725 73.7752 30.0662C72.4223 29.5191 68.5608 29.4705 63.531 29.3782C59.6464 29.3069 56.3794 30.6175 54.8837 31.6247C51.3944 33.9745 50.0841 37.5311 49.2139 39.3617C49.0919 39.6184 48.9587 39.829 48.8716 39.1485C48.2999 34.6822 49.3523 32.7748 49.4712 31.0693C49.6388 28.6634 49.5796 26.8371 49.5316 26.4593C49.4256 25.6255 47.2027 26.5598 44.5063 26.8138C42.7393 26.9998 41.4705 27.277 40.819 27.4853C40.5198 27.5834 40.2846 27.6659 39.978 27.8102" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="cta__photo-wrap">
+      <div class="cta__photo-card reveal" style="--d:0s" aria-hidden="true"></div>
+      <div class="cta__photo reveal" style="--d:.18s">
+        <img src="assets/photos/photo-1-web.jpg" alt="Евгения Иштылечева">
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__text reveal" style="--d:0s"><span data-en="Evgeniya Ishtylecheva © ">Евгения Иштылечева © </span><span id="footerYear"></span></p>
+      <p class="site-footer__text site-footer__credit reveal" style="--d:.1s">
+        Developed by
+        <a href="https://marina-ux.netlify.app/" target="_blank" rel="noopener" class="site-footer__link">Marina Medvetskaia</a>
+      </p>
+    </div>
+  </footer>
+</section>
+
+</main>
+
+<script>
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+(function () {
+  var toggle = document.getElementById('langToggle');
+  var menu = document.getElementById('langMenu');
+  var code = document.getElementById('langCode');
+  if (!toggle || !menu) return;
+
+  function closeMenu() {
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var isOpen = menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  menu.querySelectorAll('.site-header__lang-option').forEach(function (option) {
+    option.addEventListener('click', function () {
+      menu.querySelectorAll('.site-header__lang-option').forEach(function (o) {
+        o.classList.remove('is-active');
+      });
+      option.classList.add('is-active');
+      code.textContent = option.getAttribute('data-code');
+      window.applyLang(option.getAttribute('data-lang'));
+      closeMenu();
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!menu.contains(e.target) && e.target !== toggle) closeMenu();
+  });
+})();
+
+(function () {
+  var toggle = document.getElementById('mobileMenuToggle');
+  var menu = document.getElementById('mobileMenu');
+  if (!toggle || !menu) return;
+
+  function setOpen(isOpen) {
+    toggle.classList.toggle('is-open', isOpen);
+    menu.classList.toggle('is-open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    document.body.classList.toggle('mobile-menu-open', isOpen);
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!toggle.classList.contains('is-open'));
+  });
+
+  menu.querySelectorAll('.mobile-menu__link').forEach(function (link) {
+    link.addEventListener('click', function () { setOpen(false); });
+  });
+
+  menu.querySelectorAll('.mobile-menu__lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      menu.querySelectorAll('.mobile-menu__lang-btn').forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+
+      var desktopCode = document.getElementById('langCode');
+      if (desktopCode) desktopCode.textContent = btn.getAttribute('data-code');
+
+      var desktopMenu = document.getElementById('langMenu');
+      if (desktopMenu) {
+        desktopMenu.querySelectorAll('.site-header__lang-option').forEach(function (o) {
+          o.classList.toggle('is-active', o.getAttribute('data-lang') === btn.getAttribute('data-lang'));
+        });
+      }
+
+      window.applyLang(btn.getAttribute('data-lang'));
+    });
+  });
+})();
+
+(function () {
+  window.applyLang = function (lang, skipSave) {
+    document.documentElement.lang = lang === 'en' ? 'en' : 'ru';
+    document.querySelectorAll('[data-en], [data-en-html]').forEach(function (el) {
+      var isHtml = el.hasAttribute('data-en-html');
+      if (el.dataset.ruCached === undefined) {
+        el.dataset.ruCached = isHtml ? el.innerHTML : el.textContent;
+      }
+      if (lang === 'en') {
+        if (isHtml) el.innerHTML = el.getAttribute('data-en-html');
+        else el.textContent = el.getAttribute('data-en');
+      } else {
+        if (isHtml) el.innerHTML = el.dataset.ruCached;
+        else el.textContent = el.dataset.ruCached;
+      }
+    });
+    if (!skipSave) {
+      try { localStorage.setItem('siteLang', lang); } catch (e) {}
+    }
+
+    var code = lang === 'en' ? 'EN' : 'RU';
+    var desktopCode = document.getElementById('langCode');
+    if (desktopCode) desktopCode.textContent = code;
+    document.querySelectorAll('.site-header__lang-option').forEach(function (o) {
+      o.classList.toggle('is-active', o.getAttribute('data-lang') === lang);
+    });
+    document.querySelectorAll('.mobile-menu__lang-btn').forEach(function (b) {
+      b.classList.toggle('is-active', b.getAttribute('data-lang') === lang);
+    });
+  };
+
+  try {
+    var savedLang = localStorage.getItem('siteLang');
+    if (savedLang === 'en') window.applyLang('en', true);
+  } catch (e) {}
+})();
+
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  var rest = Array.prototype.filter.call(els, function (el) {
+    return !el.closest('.site-footer');
+  });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -120px 0px' });
+    rest.forEach(function (el) { io.observe(el); });
+  } else {
+    rest.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* the footer is the very last thing on the page — the -120px shrink above
+     means its top edge can never reach the shrunk boundary even at max
+     scroll, so it needs its own, unshrunk observer or it stays invisible forever */
+  var footerEls = Array.prototype.filter.call(els, function (el) {
+    return el.closest('.site-footer');
+  });
+
+  if ('IntersectionObserver' in window) {
+    var footerIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          footerIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.01 });
+    footerEls.forEach(function (el) { footerIO.observe(el); });
+  } else {
+    footerEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+})();
+
+(function () {
+  var videos = document.querySelectorAll('video');
+  if (!videos.length) return;
+
+  if ('IntersectionObserver' in window) {
+    var videoIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(function () {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, { threshold: 0.25 });
+    videos.forEach(function (v) { videoIO.observe(v); });
+  } else {
+    videos.forEach(function (v) { v.play().catch(function () {}); });
+  }
+})();
+
+(function () {
+  document.querySelectorAll('.cta__copy-btn').forEach(function (btn) {
+    var hideTimer;
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      navigator.clipboard.writeText(text).then(function () {
+        clearTimeout(hideTimer);
+        btn.classList.add('is-copied');
+        hideTimer = setTimeout(function () {
+          btn.classList.remove('is-copied');
+        }, 1500);
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No-code Developer — Портфолио</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="assets/favicon/site.webmanifest">
+<link rel="stylesheet" href="css/style.css?v=69">
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+    <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence"/>
+    <feComponentTransfer in="turbulence" result="mapped">
+      <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5"/>
+      <feFuncG type="gamma" amplitude="0" exponent="1" offset="0"/>
+      <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5"/>
+    </feComponentTransfer>
+    <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap"/>
+    <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
+      <fePointLight x="-200" y="-200" z="300"/>
+    </feSpecularLighting>
+    <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage"/>
+    <feDisplacementMap in="SourceGraphic" in2="softMap" scale="100" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<div class="site-dots" aria-hidden="true"></div>
+
+<header class="site-header">
+  <nav class="site-header__inner">
+    <a href="index.html" class="site-header__logo" aria-label="На главную"></a>
+    <a href="#about" class="site-header__link" data-en="About">Обо мне</a>
+    <a href="#services" class="site-header__link" data-en="Services">Услуги</a>
+    <a href="#cases" class="site-header__link" data-en="Projects">Проекты</a>
+    <div class="site-header__lang">
+      <button type="button" class="site-header__lang-btn" id="langToggle" aria-haspopup="true" aria-expanded="false">
+        <span id="langCode">RU</span>
+        <svg class="site-header__lang-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="site-header__lang-menu" id="langMenu">
+        <button type="button" class="site-header__lang-option is-active" data-lang="ru" data-code="RU">Русский</button>
+        <button type="button" class="site-header__lang-option" data-lang="en" data-code="EN">English</button>
+      </div>
+    </div>
+    <a href="#contacts" class="site-header__cta js-scroll-center" data-en="Contact Me">Написать мне</a>
+  </nav>
+</header>
+
+<button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+  <span class="mobile-menu-toggle__icon" aria-hidden="true">
+    <img src="assets/decor/icon-menu.svg" alt="" class="mobile-menu-toggle__icon-img mobile-menu-toggle__icon-img--menu">
+    <img src="assets/decor/icon-close.svg" alt="" class="mobile-menu-toggle__icon-img mobile-menu-toggle__icon-img--close">
+  </span>
+</button>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu__inner">
+    <a href="index.html" class="mobile-menu__logo" aria-label="На главную"></a>
+    <nav class="mobile-menu__nav">
+      <a href="#about" class="mobile-menu__link" data-en="About">Обо мне</a>
+      <a href="#services" class="mobile-menu__link" data-en="Services">Услуги</a>
+      <a href="#cases" class="mobile-menu__link" data-en="Projects">Проекты</a>
+      <div class="mobile-menu__card">
+        <div class="mobile-menu__card-bg" aria-hidden="true">
+          <img src="assets/decor/gradient-hero-1.png" class="mobile-menu__card-gradient mobile-menu__card-gradient--top" alt="">
+          <img src="assets/decor/gradient-hero-2.png" class="mobile-menu__card-gradient mobile-menu__card-gradient--bottom" alt="">
+        </div>
+        <p class="mobile-menu__card-title" data-en-html="Need a website?&lt;br&gt;&lt;span class='mobile-menu__card-title-accent'&gt;Write to me&lt;/span&gt;">Нужен сайт<br><span class="mobile-menu__card-title-accent">Напишите мне</span></p>
+        <div class="mobile-menu__email-row">
+          <a href="mailto:me@ishtylecheva.ru" class="cta__email-link">me@ishtylecheva.ru</a>
+          <span class="copy3d">
+            <button type="button" class="cta__copy-btn copy3d__btn" aria-label="Скопировать email" data-copy="me@ishtylecheva.ru">
+              <span class="copy3d__back" aria-hidden="true"></span>
+              <span class="copy3d__front">
+                <svg class="copy3d__icon copy3d__icon--copy" width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M41.499 31.2838C41.499 31.2756 41.499 31.2674 45.532 31.2591C49.5649 31.2507 57.6308 31.2425 64.5588 31.1558C71.4867 31.0691 77.0323 30.9041 80.2408 30.8867C85.2582 30.8595 86.2188 31.2352 86.606 31.3747C86.8009 31.445 86.9241 31.6597 86.9758 40.1591C87.0276 48.6585 86.9866 65.4733 86.9425 74.3123C86.8984 83.1514 86.8524 83.5052 86.7932 83.8944C86.5325 85.6102 86.2346 87.4548 86.1028 88.8065C86.0562 89.2848 85.7817 89.2955 81.5253 89.4634C77.2688 89.6312 68.9698 89.9442 62.6663 90.201C56.3629 90.4578 52.3064 90.6489 49.5526 90.6702C45.4686 90.7017 42.9947 90.278 41.067 90.0767C38.8379 89.844 37.8527 89.4089 37.396 89.2191C37.1825 89.1304 37.056 88.9533 37.0134 88.7111C36.9707 88.4688 37.0285 88.1402 37.2087 79.3329C37.3889 70.5256 37.6898 53.2496 37.873 44.2212C38.0563 35.1929 38.1128 34.9357 38.2114 34.5658C38.6683 32.8514 39.2193 31.7687 40.0701 31.1685C40.3372 31.0445 40.6265 30.9453 40.8776 30.866C41.1287 30.7866 41.3329 30.7301 41.5432 30.6719" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M68.9619 31.4095C68.9619 31.3949 68.9619 31.3803 68.9752 28.3157C68.9885 25.251 69.015 19.1367 68.989 15.7677C68.9596 11.959 68.7729 11.2705 68.591 10.8635C68.4985 10.6564 68.1628 10.6023 61.2946 10.775C54.4264 10.9476 40.9738 11.3881 33.3131 11.7379C25.6524 12.0878 24.1912 12.3337 22.8088 12.5249C18.0928 13.1773 16.2768 13.3919 16.0481 13.4509C15.8044 13.5138 16.5497 14.0997 16.8558 15.1847C17.0619 15.9152 17.2445 17.0429 17.2425 23.8708C17.2405 30.6988 17.0161 43.2009 16.9764 50.2848C16.9368 57.3688 17.0888 58.6556 17.2256 60.2315C17.5204 63.6298 17.6888 65.6925 18.0751 65.9629C18.7312 66.4222 20.6201 66.2582 23.6403 66.5668C25.4254 66.7493 27.7488 66.6731 30.0544 66.4983C32.3601 66.3236 34.5842 65.973 35.8275 65.7751C37.0708 65.5772 37.266 65.5428 37.467 65.5072" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg class="copy3d__icon copy3d__icon--check" width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.1719 49.6677C16.1719 49.646 16.4997 49.7395 17.9575 50.6841C21.2219 52.7992 24.3247 56.0129 26.8642 58.39C29.008 60.3967 31.5452 62.5879 34.3521 65.4886C37.166 68.3965 39.0213 70.1573 39.6679 70.6216C39.9458 70.8212 40.3242 70.5348 44.3039 65.7073C48.2836 60.8798 55.9049 51.4143 62.2121 44.1616C68.5193 36.9089 73.2814 32.1558 76.5132 28.8443C79.745 25.5329 81.302 23.807 82.7162 21.8091" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+          </span>
+        </div>
+      </div>
+    </nav>
+    <div class="mobile-menu__lang">
+      <button type="button" class="mobile-menu__lang-btn is-active" data-lang="ru" data-code="RU">RU</button>
+      <button type="button" class="mobile-menu__lang-btn" data-lang="en" data-code="EN">EN</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<section class="hero">
+  <div class="hero__blobs" aria-hidden="true">
+    <img src="assets/decor/gradient-hero-2.png" class="hero__gradient hero__gradient--bl" alt="">
+    <img src="assets/decor/gradient-hero-1.png" class="hero__gradient hero__gradient--br" alt="">
+  </div>
+
+  <div class="hero__inner">
+    <div class="hero__row">
+
+      <div class="hero__main">
+        <h1 class="hero__title reveal" style="--d:0s" data-en-html="No-code &lt;span class='hero__title-accent'&gt;developer&lt;/span&gt;">No-code <span class="hero__title-accent">разработчик</span></h1>
+
+        <p class="hero__subtitle reveal" style="--d:.12s" data-en="I build landing pages and online stores on no-code platforms, tailor the site to your business needs and site logic, and keep you updated every step of the way.">
+          Собираю лендинги и интернет-магазины на no-code платформах, настраиваю сайт под задачи бизнеса, сценарии сайта и держу вас в курсе на каждом шаге.
+        </p>
+
+        <div class="hero__actions reveal" style="--d:.26s">
+          <a href="mailto:me@ishtylecheva.ru" class="btn3d btn3d--primary">
+            <span class="btn3d__back"></span>
+            <span class="btn3d__front" data-en="Send Email">Отправить email</span>
+          </a>
+          <a href="#cases" class="btn3d btn3d--outline js-scroll-center">
+            <span class="btn3d__back"></span>
+            <span class="btn3d__front" data-en="View Projects">Смотреть проекты</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__side reveal" style="--d:.18s">
+        <p class="hero__side-text" data-en="I connect Make and n8n for form submissions, requests, and data transfer between services.">Подключаю Make и n8n, для заявок, форм и передачу между сервисами.</p>
+        <img src="assets/decor/line-hero.png" class="hero__side-line" alt="" aria-hidden="true">
+      </div>
+
+    </div>
+
+    <div class="hero__stats">
+      <div class="hero__stat reveal" style="--d:.38s">
+        <span class="hero__stat-number">600+</span>
+        <span class="hero__stat-label" data-en="Hours worked in the Bubble editor">Часов работы в редакторе Bubble</span>
+      </div>
+      <div class="hero__stat reveal" style="--d:.46s">
+        <span class="hero__stat-number">4</span>
+        <span class="hero__stat-label" data-en="Completed projects (working demo versions)">Готовых проекта (рабочие демо-версии)</span>
+      </div>
+      <div class="hero__stat reveal" style="--d:.54s">
+        <span class="hero__stat-number">7</span>
+        <span class="hero__stat-label" data-en="Tools I use in my work">Инструментов, которые использую в работе</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tech-stack">
+  <span class="tech-stack__kicker" data-en="Tech Stack">Тех стек</span>
+  <div class="about__stack-viewport">
+    <div class="about__stack-track">
+      <div class="about__stack">
+        <span class="stack-chip"><img src="assets/decor/logo-bubble.png" alt="Bubble" class="stack-chip__logo stack-chip__logo--bubble"></span>
+        <span class="stack-chip"><img src="assets/decor/logo-tilda.png" alt="Tilda" class="stack-chip__logo stack-chip__logo--square"></span>
+        <span class="stack-chip"><img src="assets/decor/logo-figma.png" alt="Figma" class="stack-chip__logo stack-chip__logo--figma"></span>
+        <span class="stack-chip"><img src="assets/decor/logo-openai.png" alt="OpenAI" class="stack-chip__logo stack-chip__logo--openai"></span>
+        <span class="stack-chip"><img src="assets/decor/logo-claude.png" alt="Claude" class="stack-chip__logo stack-chip__logo--claude"></span>
+        <span class="stack-chip stack-chip--dark"><img src="assets/decor/logo-n8n.svg" alt="n8n" class="stack-chip__logo stack-chip__logo--n8n"></span>
+        <span class="stack-chip"><img src="assets/decor/logo-make.png" alt="Make" class="stack-chip__logo"></span>
+      </div>
+      <div class="about__stack" aria-hidden="true">
+        <span class="stack-chip"><img src="assets/decor/logo-bubble.png" alt="Bubble" class="stack-chip__logo stack-chip__logo--bubble"></span>
+        <span class="stack-chip"><img src="assets/decor/logo-tilda.png" alt="Tilda" class="stack-chip__logo stack-chip__logo--square"></span>
+        <span class="stack-chip"><img src="assets/decor/logo-figma.png" alt="Figma" class="stack-chip__logo stack-chip__logo--figma"></span>
+        <span class="stack-chip"><img src="assets/decor/logo-openai.png" alt="OpenAI" class="stack-chip__logo stack-chip__logo--openai"></span>
+        <span class="stack-chip"><img src="assets/decor/logo-claude.png" alt="Claude" class="stack-chip__logo stack-chip__logo--claude"></span>
+        <span class="stack-chip stack-chip--dark"><img src="assets/decor/logo-n8n.svg" alt="n8n" class="stack-chip__logo stack-chip__logo--n8n"></span>
+        <span class="stack-chip"><img src="assets/decor/logo-make.png" alt="Make" class="stack-chip__logo"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about__inner">
+    <div class="about__photo-wrap">
+      <div class="about__photo-card reveal" style="--d:0s" aria-hidden="true"></div>
+      <div class="about__photo reveal" style="--d:.18s">
+        <img src="assets/photos/photo-3.jpg" alt="Евгения Иштылечева">
+      </div>
+    </div>
+    <div class="about__content reveal reveal--rise" style="--d:.12s">
+      <h2 class="section-title" data-en="About Me">Обо мне</h2>
+      <p class="about__text" data-en="My name is Evgeniya Ishtylecheva. I've been building websites and simple business tools on no-code platforms for over a year. I integrate Google Maps and Weather APIs, and I'm actively learning AI (OpenAI, Claude) and automation with n8n and Make. I send a clear brief, regular weekly updates (every Friday), and stick to deadlines.">
+        Меня зовут Евгения Иштылечева. Собираю сайты и простые бизнес-инструменты на no-code платформах более 1 года. Подключаю API Google maps, Weather, а также активно изучаю AI (OpenAI, Claude) и учусь автоматизации на n8n, make. Высылаю понятный бриф, регулярные апдейты (каждую пятницу) и придерживаюсь сроков.
+      </p>
+      <p class="about__text" data-en="The Bubble sites I build can handle a database of up to 10,000 items, meaning your project can withstand growth and future changes.">
+        Bubble-сайты, которые я создаю, способны выдерживать базу данных до 10 000 элементов, что означает — проект выдержит рост и последующие изменения.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services__inner">
+    <div class="services__bg" aria-hidden="true">
+      <img src="assets/decor/gradient-services.png" alt="">
+    </div>
+
+    <h2 class="section-title reveal" style="--d:0s" data-en="Services">Услуги</h2>
+
+    <div class="services__carousel">
+      <div class="services__grid">
+        <article class="service-card reveal" style="--d:0s">
+          <div class="service-card__icons">
+            <span class="service-card__icon" aria-hidden="true">
+              <img src="assets/decor/logo-tilda.png" alt="" class="service-card__icon-img service-card__icon-img--tilda">
+            </span>
+            <span class="service-card__icon" aria-hidden="true">
+              <img src="assets/decor/logo-bubble.png" alt="" class="service-card__icon-img">
+            </span>
+          </div>
+          <h3 class="service-card__title" data-en="Tilda &amp; Bubble Websites">Tilda и Bubble-сайты</h3>
+          <p class="service-card__text" data-en="I build landing pages, business card sites, and multi-page websites on Bubble with responsive design for mobile, tablet, and desktop, plus working forms (requests, subscriptions) and feedback.">Собираю лендинги, сайты-визитки и многостраничные сайты на Bubble с адаптивной вёрсткой под телефон, планшет и десктоп, и рабочими формами (заявка, подписка), обратная связь.</p>
+        </article>
+
+        <article class="service-card reveal" style="--d:.3s">
+          <span class="service-card__icon service-card__icon--solo" aria-hidden="true">
+            <svg width="55" height="55" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M87.1242 50.4795C87.1242 50.4876 87.1242 50.4956 87.1303 52.6806C87.1364 54.8655 87.1486 59.2272 87.2092 62.026C87.2699 64.8247 87.3785 65.9285 87.5566 70.7598C87.7347 75.5911 87.979 84.1165 88.0765 88.7167C88.1828 93.7324 88.0152 94.3721 87.828 94.7022C87.7354 94.8653 87.442 94.848 78.5707 94.8796C69.6994 94.9111 52.2065 94.948 42.4391 94.8528C32.6717 94.7577 31.1601 94.5293 30.2256 94.3742C29.2911 94.2192 28.9796 94.1444 28.6963 94.0567C28.413 93.969 28.1673 93.8707 27.793 93.6657" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M27.7918 93.9277C27.4981 93.9088 26.2722 93.7542 24.1457 93.6313C20.0955 93.3971 18.6126 93.7912 16.2701 94.2684C15.8048 94.3699 15.5705 94.4105 15.2633 94.4398C14.956 94.4692 14.5828 94.4862 14.168 94.4784" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14.168 94.4783C14.168 94.47 14.168 94.4616 14.239 88.0994C14.31 81.7372 14.452 69.0213 14.553 61.4718C14.6541 53.9224 14.71 51.9247 14.7675 49.8665" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8.30859 11.7485C8.32749 11.7485 8.34639 11.7485 11.3982 11.7288C14.4501 11.7091 20.5343 11.6696 29.2521 11.3521C37.9699 11.0346 49.1368 10.4402 59.9698 10.0466C70.8027 9.65298 80.9632 9.47819 86.3316 9.36592C91.9684 9.20918 91.3436 10.3134 92.5 10" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M92.2894 10.7441C92.2894 10.7269 92.3078 14.353 92.4697 21.0718C92.544 24.1581 92.8813 26.5782 93.0127 29.1321C93.144 31.686 93.1304 34.2978 93.0661 36.1962C92.9643 39.2038 92.5121 41.335 91.9608 43.269C91.0879 46.3311 90.0884 47.4164 87.8897 49.7284C86.5583 51.1283 84.0295 51.7647 81.5965 52.2487C78.5334 52.858 77.2333 51.6473 76.2336 50.9227C74.8955 49.9527 74.3157 47.7648 73.1132 44.2044C72.6525 42.8406 72.1914 40.8923 71.7957 38.9964C71.4001 37.1005 71.143 35.2973 70.8621 31.1011C70.5812 26.9048 70.2841 20.3701 70.1548 16.5657C70.0256 12.7613 70.0731 11.8851 70.1119 11.3275C70.1507 10.7698 70.1793 10.5573 70.3502 10.4688" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M71.4948 34.7715C71.4948 34.8366 71.4764 36.5012 71.1766 39.9332C70.6433 46.0371 69.2256 46.8154 68.5812 47.7399C67.4836 49.3149 63.502 50.7329 58.824 51.7424C56.3148 52.2838 54.9341 51.1672 52.9975 49.9063C51.7844 49.1163 50.3063 45.7682 49.1513 40.432C48.6746 38.2297 48.899 34.6058 48.9747 31.9089C49.0503 29.2121 49.3012 27.505 49.4347 24.0245C49.5681 20.544 49.5764 15.3418 49.3804 9.98193" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M49.0288 42.0966C49.0271 43.2876 48.8553 46.1829 48.1139 47.5355C46.1037 51.2027 41.8487 53.5732 40.4983 54.2841C39.2583 54.9368 37.7196 54.79 36.1018 54.3453C33.8137 53.7165 31.3383 50.45 30.2683 48.9452C29.0386 47.216 28.9823 43.5046 29.0029 40.1405C29.0126 38.5531 29.2146 37.2128 29.298 33.3189C29.3813 29.4251 29.3894 23.0193 29.3842 19.1748C29.3791 15.3302 29.3604 14.2409 29.3254 13.5758C29.2904 12.9107 29.2396 12.7029 29.0566 12.2117" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M28.6975 43.7252C28.6631 43.9858 26.918 46.7157 24.5543 49.3194C22.9311 51.1073 19.5243 51.4795 17.9282 51.2506C16.0242 50.9774 14.7184 49.1119 13.7014 47.773C13.3637 47.1084 13.0888 46.089 12.7331 43.8458C12.5266 42.3065 12.2673 39.9531 11.9219 37.0156" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11.9216 37.0157C11.9086 36.2636 11.5269 31.8894 11.1173 27.0618C10.9042 24.5509 10.6013 19.935 10.4003 17.3968C10.1435 14.5354 10.0081 13.9026 9.86104 13.3398C9.79178 13.0768 9.73343 12.8598 9.62109 12.5259" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11.4928 33.8698C11.4855 33.8698 11.4783 33.8698 16.0915 33.8824C20.7046 33.8951 29.9384 33.9203 37.304 33.6559C44.6697 33.3915 49.8875 32.8365 56.5731 32.3156C63.2586 31.7946 71.2538 31.3244 77.4914 31.1402C83.729 30.9559 87.9667 31.0718 90.3314 31.1205C92.6961 31.1692 93.0592 31.1472 93.2465 31.0632" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M55.2734 58.7207C55.2734 58.7285 55.2734 58.7363 55.3133 64.087C55.3532 69.4377 55.4329 80.1312 55.4918 85.7874C55.5507 91.4435 55.5862 91.7384 55.6381 92.2857C55.6899 92.833 55.7568 93.6238 55.8831 94.5515" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M55.4062 59.7025C55.4149 59.6939 55.4235 59.6853 57.1839 59.6766C58.9442 59.6678 62.4561 59.6592 66.1169 59.5503C69.7777 59.4414 73.4811 59.2324 77.2966 59.0171" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M77.2969 59.0171C77.2969 59.2172 77.3163 61.3346 77.639 67.184C77.9422 71.019 78.5285 76.6136 78.85 81.4428C79.1715 86.2719 79.2104 90.1662 79.2505 94.1784" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M23.8086 62.0951C23.8086 62.1757 23.8086 65.7794 23.8529 71.6085C23.8767 74.7417 24.0947 75.9673 24.2011 77.1294C24.396 79.2572 24.6189 81.6824 24.8346 83.252C24.9297 83.9444 28.5851 82.7857 32.8551 81.8359C34.8257 81.3976 36.7653 81.0973 39.7641 80.8139C44.1118 80.403 44.8881 80.8185 45.2784 80.4067C46.2817 79.348 45.4993 77.6941 45.5646 75.104C45.6236 72.7631 45.6215 68.3359 45.5734 65.9639C45.5253 63.5919 45.4022 63.4088 45.2125 63.2853C43.931 62.451 41.2079 62.601 38.7544 62.226C35.8934 61.7887 32.1452 61.373 29.0741 61.3379C27.302 61.4093 26.3428 61.4976 25.4288 61.743C25.2108 61.8267 24.998 61.9253 24.7088 62.0859" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <h3 class="service-card__title" data-en="Online Stores">Интернет‑магазины</h3>
+          <p class="service-card__text" data-en="I set up online stores on Bubble: catalog with filters, cart, checkout, payment, and a customer account.">Настраиваю интернет-магазины на Bubble: каталог с фильтрами, корзина, оформление заказа, оплата и личный кабинет покупателя.</p>
+        </article>
+
+        <article class="service-card reveal" style="--d:.6s">
+          <span class="service-card__icon service-card__icon--solo" aria-hidden="true">
+            <svg width="55" height="55" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.51953 18.0046C5.51953 18.0316 5.51953 18.0585 5.51953 26.1143C5.51953 34.17 5.51953 50.2538 5.51953 60.8513C5.51953 71.4487 5.51953 76.0724 5.51953 78.9535C5.51953 81.8345 5.51953 82.8328 5.51953 84.0046" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6.51953 84.0046C6.53617 84.0046 6.55281 84.0046 9.09497 84.0122C11.6371 84.0198 16.7043 84.0349 29.37 84.2265C42.0358 84.4181 62.1465 84.7856 73.9748 84.929C85.8031 85.0724 88.7396 84.9805 90.5462 84.9103C92.3529 84.8401 92.9408 84.7944 93.5195 84.1867" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M94.5195 84.0046C94.5195 83.9721 94.5195 81.8467 94.7212 74.1186C94.9229 68.499 95.3262 59.4325 95.466 49.4957C95.6058 39.559 95.4697 29.0267 95.0831 18.0046" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M93.5195 19.0046C93.4882 19.0046 93.4569 19.0046 90.2808 18.9003C87.1047 18.796 80.7849 18.5874 75.8569 18.2724C70.9289 17.9575 67.5843 17.5426 62.2947 17.228C57.0051 16.9134 49.8717 16.7116 41.9591 16.4883C34.0464 16.2649 25.5706 16.0261 20.0184 16.006C14.4662 15.9859 12.0945 16.1919 10.7642 16.3091C9.21718 16.4483 8.64805 16.5372 7.95506 16.6473C7.60781 16.6913 7.2695 16.7114 6.51953 16.7881" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21.1019 32.8235C21.1019 33.0161 21.0917 35.9076 20.348 43.2255C19.8844 47.7866 18.1577 53.9259 16.9423 58.6115C15.7269 63.2972 14.7971 66.3067 14.2741 67.9574C13.6852 69.8162 13.4843 70.2662 13.5245 70.6765C13.5756 71.198 17.7465 70.9621 19.7823 70.8789C22.3181 70.7752 22.7757 65.0485 23.2824 63.6187C23.7417 62.3229 24.1417 61.6427 24.3893 61.2994C24.9176 60.5668 24.1205 60.6886 28.5 61.2994C33.2169 61.9573 33.2443 67.1945 33.9142 68.7542C34.085 69.1517 34.2866 69.7373 34.5 70C34.7134 70.2627 34.9134 70.1927 35.0979 70.0856C35.9665 69.5811 38.9608 69.5169 39.8566 69.3434C40.0969 69.2969 40.3603 69.2878 40.478 69.162C40.5956 69.0362 40.5619 68.8084 39.0154 62.7762C37.4689 56.7439 34.4106 44.914 32.7793 38.6699C31.0675 32.118 30.8168 31.613 30.544 31.2553C30.4059 31.0744 30.1466 31.0063 29.9205 31.0047C28.9303 30.9978 27.8822 31.3621 24.3893 31.426C23.6218 31.4533 23.3632 31.4897 23.1033 31.5254C22.8435 31.5611 22.5903 31.595 21.9256 31.8075" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M26.7182 41.2581C26.9012 42.4188 28.2418 45.4897 29.3903 48.4962C30.0231 50.1527 30.4269 51.5785 30.7566 52.5995C30.8929 53.0215 31.0068 53.4674 31.022 53.8319C31.0516 54.5426 28.2134 53.7468 24.468 54.0296C23.7834 54.0814 23.8637 53.4474 23.9209 53.0553C24.1607 51.4113 25.3063 47.9365 25.4646 45.7868C25.608 44.7032 26.5821 42.2156 26.6564 41.2017C26.6803 40.769 26.6148 41.8287 26.6545 41.2016" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M45.6765 32.7516C45.6765 32.7925 45.6765 32.8334 45.6656 37.0479C45.6548 41.2624 45.6332 49.6491 45.5971 55.7164C45.5609 61.7837 45.5109 65.2773 45.5208 67.464C45.5307 69.6507 45.6021 70.4245 45.7451 70.7708C45.8881 71.1171 46.1006 71.0124 46.2877 70.8777C47.0282 70.3447 48.141 69.8294 50.2224 69.5108C51.0004 69.3917 51.5439 69.393 51.9426 69.2488C53.0149 68.8608 52.6536 62.5592 52.8851 58.8189C52.9081 58.4463 52.9898 58.203 53.1223 58.0552C53.7122 57.397 55.2158 58.2249 60.0701 58.3722C63.5181 58.4769 67.4266 55.8698 69.6074 54.354C70.2643 53.8974 70.759 53.4968 71.2331 52.9963C71.6523 52.5538 72.003 51.3009 72.388 49.2281C72.8224 46.8888 72.7821 43.6041 72 41C71.0042 37.6844 69.7954 35.9495 69 35C67.6154 33.3471 63.5367 32.5338 60.4753 32.2738C57.8557 32.1522 53.0715 32.0515 50.4958 32.0172C47.9202 31.9829 47.6979 32.0182 47.1347 32.129" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M52.212 39.0661C52.212 39.0806 52.212 39.0951 52.212 41.1964C52.212 43.2976 52.212 47.4852 52.305 49.6738C52.398 51.8624 52.5839 51.9252 53.1602 51.9575C55.9166 52.1122 57.1866 51.827 59.9355 51.3848C62.3542 50.9957 63.8944 50.3395 64.2494 50.085C65.3281 49.3116 65.8668 47.369 65.9951 44.5674C66.0763 42.7939 65.136 41.2456 64.1416 40.2999C62.7332 38.9604 60.6179 39.0591 57.3542 38.3574C56.451 38.194 55.9641 38.1374 55.0523 38.093C54.3631 38.0763 53.2144 38.0716 52 38" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M78.5479 33.0046C78.556 33.0046 78.5641 33.0046 78.5671 37.9414C78.5701 42.8782 78.5677 52.7517 78.5617 58.0909C78.5556 63.4301 78.5459 63.9358 78.5311 65.1179C78.5163 66.3 78.4967 68.1433 78.6066 69.098C78.7165 70.0528 78.9566 70.0633 79.6629 69.9632C82.9569 69.4968 83.7679 69.301 84.4103 69.108C84.6958 69.0222 84.696 68.54 84.8633 64.3842C85.0307 60.2284 85.3134 52.306 85.4375 46.716C85.5615 41.126 85.5183 38.1084 85.4791 36.4358C85.4342 34.5262 85.3066 34.0841 85.0962 33.7259C84.7235 33.4566 84.2554 33.2976 83.2321 33.1943C82.4436 33.1357 81.1085 33.0646 79.9345 33.0146" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <h3 class="service-card__title" data-en="API Integration">Подключение API</h3>
+          <p class="service-card__text" data-en="I connect external services to Bubble via the API Connector — weather, maps, payment systems, CRM — setting up data retrieval and submission with error handling, so information on the site updates automatically without manual work.">Подключаю внешние сервисы к Bubble через API Connector: погода, карты, платёжные системы, CRM — настраиваю получение и отправку данных с обработкой ошибок, чтобы информация на сайте обновлялась автоматически, без ручной работы.</p>
+        </article>
+
+        <article class="service-card service-card--dark reveal" style="--d:.9s">
+          <div class="service-card__icons">
+            <span class="service-card__icon" aria-hidden="true">
+              <img src="assets/decor/logo-make-white.svg" alt="" class="service-card__icon-img">
+            </span>
+            <span class="service-card__icon" aria-hidden="true">
+              <img src="assets/decor/logo-n8n-white.svg" alt="" class="service-card__icon-img">
+            </span>
+          </div>
+          <h3 class="service-card__title" data-en="Process Automation">Автоматизация процессов</h3>
+          <p class="service-card__text" data-en="I connect services via Make and n8n: setting up automations, linking site requests to Telegram or a CRM, and passing form data into Google Sheets.">Связываю сервисы через Make и n8n: настраиваю автоматизацию, заявки с сайта связываю с Telegram или CRM, данные из форм передаю в Google Таблицы.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="services__nav">
+      <div class="services__dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- certificates section temporarily hidden until a new certificate is added
+<section class="certificates" id="certificates">
+  <div class="certificates__inner">
+    <h2 class="section-title reveal" style="--d:0s" data-en="Certificates">Сертификаты</h2>
+    <p class="certificates__subtitle reveal" style="--d:.1s" data-en="I take courses and update my skills regularly — every new certificate is applied to a project right away.">Прохожу курсы и обновляю навыки, каждый новый сертификат сразу применяю в проекте.</p>
+
+    <div class="cert-card reveal" style="--d:.2s">
+      <div class="cert-card__content">
+        <h3 class="cert-card__title">Bubble</h3>
+        <p class="cert-card__text" data-en="Completed the &quot;No-Code from Scratch&quot; mentorship program (76 academic hours) and passed the final exam.">Прошла менторскую программу «No-Code from Scratch» объёмом 76 академических часов и успешно сдала итоговый экзамен.</p>
+        <div class="cert-card__footer">
+          <span class="cert-card__issuer">
+            <img src="assets/decor/logo-structurale.svg" class="cert-card__issuer-logo" alt="Structurale Institute">
+          </span>
+          <span>2026</span>
+        </div>
+      </div>
+      <div class="cert-card__image">
+        <img src="assets/photos/certificate-bubble.png" alt="Сертификат Bubble, Structurale Institute">
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+
+<section class="process" id="process">
+  <div class="process__bg" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="process__inner">
+    <div class="process__header">
+      <h2 class="section-title reveal" style="--d:0s" data-en-html="Work &lt;span class='section-title--accent'&gt;Process&lt;/span&gt;">Процесс <span class="section-title--accent">работы</span></h2>
+      <p class="process__subtitle reveal" style="--d:.1s" data-en="I keep the process fully transparent: regular updates and strict deadlines.">Веду процесс максимально прозрачно: регулярные апдейты и придерживаюсь сроков.</p>
+    </div>
+
+    <div class="process__grid-wrap">
+      <img src="assets/decor/line-process.svg" class="process__line" alt="" aria-hidden="true">
+      <div class="process__grid">
+      <article class="process-card reveal reveal--rise" style="--d:.2s">
+        <span class="process-card__number">01</span>
+        <h3 class="process-card__title" data-en="Brief">Бриф</h3>
+        <p class="process-card__text" data-en="We discuss the task, who the site's users are, any reference examples, your time budget, and an approximate completion date.">Обсуждаем задачу, кто пользователи сайта, какие есть примеры-референсы, какой у вас бюджет по времени и примерная дата готовности.</p>
+      </article>
+
+      <article class="process-card reveal reveal--rise" style="--d:.5s">
+        <span class="process-card__number">02</span>
+        <h3 class="process-card__title" data-en="Development">Разработка</h3>
+        <p class="process-card__text" data-en="I build the site: screens, logic, databases. I send a status update once a week, with a link to the current version every Friday.">Собираю сайт: экраны, логику, базы данных. Присылаю статус раз в неделю, по пятницам отправляю ссылку на текущую версию.</p>
+      </article>
+
+      <article class="process-card reveal reveal--rise" style="--d:.8s">
+        <span class="process-card__number">03</span>
+        <h3 class="process-card__title" data-en="Testing">Тестирование</h3>
+        <p class="process-card__text" data-en="I test across different scenarios and devices before showing it to you. You receive a working version free of errors.">Проверяю на разных сценариях и устройствах, прежде чем показать вам. Вы получаете рабочую версию без ошибок.</p>
+      </article>
+
+      <article class="process-card reveal reveal--rise" style="--d:1.1s">
+        <span class="process-card__number">04</span>
+        <h3 class="process-card__title" data-en="Launch">Запуск</h3>
+        <p class="process-card__text" data-en="I publish the site and send the final link. For 7–14 days after launch, I fix any bugs found free of charge.">Публикую сайт и присылаю итоговую ссылку. В течение 7–14 дней после запуска бесплатно исправляю любые найденные баги.</p>
+      </article>
+      </div>
+    </div>
+
+    <div class="process__note reveal" style="--d:1.3s">
+      <h3 class="process__note-title" data-en="Timeline &amp; Requests">Сроки и пожелания</h3>
+      <p class="process__note-text" data-en="If additional requests come up or deadlines need to shift, I'll let you know in advance.">Если появляются доп. пожелания или сроки нужно сдвинуть — предупреждаю заранее.</p>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="cases">
+  <div class="projects__inner">
+    <div class="projects__visual reveal" style="--d:0s">
+      <div class="projects__cards" id="projectsCards">
+        <div class="projects__card projects__card--0" data-i="0">
+          <a class="projects__card-surface" href="project-2.html">
+            <span class="projects__card-tags">
+              <span class="project-tag">Bubble</span>
+              <span class="project-tag">E-commerce</span>
+              <span class="project-tag">Google Maps API</span>
+            </span>
+            <span class="projects__card-label">Smorodina</span>
+          </a>
+        </div>
+        <div class="projects__card projects__card--1" data-i="1">
+          <a class="projects__card-surface" href="project-1.html">
+            <span class="projects__card-tags">
+              <span class="project-tag">Bubble</span>
+              <span class="project-tag">Coinbase API</span>
+            </span>
+            <span class="projects__card-label">CoinConvert</span>
+          </a>
+        </div>
+        <div class="projects__card projects__card--2" data-i="2">
+          <div class="projects__card-surface">
+            <img src="assets/decor/logo-n8n.svg" alt="n8n" class="projects__card-logo">
+            <span class="projects__card-num" data-en="Project in progress">Проект в процессе</span>
+            <span class="projects__card-label" data-en="Automation via n8n">Автоматизация через n8n</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects__progress" id="projectsProgress">
+        <button type="button" class="projects__seg" data-i="0" aria-label="Кейс 01"></button>
+        <button type="button" class="projects__seg" data-i="1" aria-label="Кейс 02"></button>
+        <button type="button" class="projects__seg" data-i="2" aria-label="Кейс 03"></button>
+      </div>
+    </div>
+
+    <div class="projects__content reveal" style="--d:.14s">
+      <h2 class="section-title" data-en-html="My&lt;br class='projects__title-break'&gt; &lt;span class='section-title--accent'&gt;Projects&lt;/span&gt;">Мои<br class="projects__title-break"> <span class="section-title--accent">проекты</span></h2>
+      <p class="projects__text projects__text--desktop" data-en="Scroll with your mouse wheel or use the dots below to browse the case studies.">Листайте колесом мыши или точками снизу, чтобы посмотреть кейсы.</p>
+      <p class="projects__text projects__text--mobile" data-en="Swipe the cards or tap the line below to browse the case studies.">Свайпайте карточки в стороны или нажимайте на линию снизу, чтобы посмотреть кейсы.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contacts">
+  <picture>
+    <source media="(max-width: 639px)" srcset="assets/decor/line-footer-mobile.svg">
+    <img src="assets/decor/line-footer.svg" class="cta__line" alt="" aria-hidden="true">
+  </picture>
+  <div class="cta__bg" aria-hidden="true">
+    <img src="assets/decor/gradient-hero-2.png" class="cta__gradient cta__gradient--top" alt="">
+    <div class="cta__gradient-bottom-wrap">
+      <img src="assets/decor/gradient-hero-1.png" class="cta__gradient cta__gradient--bottom" alt="">
+    </div>
+  </div>
+
+  <div class="cta__inner">
+    <div class="cta__content reveal" style="--d:0s">
+      <h2 class="cta__title" data-en-html="Need a website or &lt;span class='section-title--accent'&gt;online store?&lt;/span&gt;">Нужен сайт или <span class="section-title--accent">интернет‑магазин?</span></h2>
+      <p class="cta__text" data-en="I respond within 24 hours. Send me your brief or project details, and I'll clarify the specifics and give you an estimate of how long the site will take to build.">Отвечаю в течение 24 часов. Присылайте бриф или информацию о проекте, и я уточню детали и скажу, сколько предварительно времени займёт создание сайта.</p>
+      <div class="cta__actions">
+        <a href="mailto:me@ishtylecheva.ru" class="btn3d btn3d--primary cta__btn">
+          <span class="btn3d__back"></span>
+          <span class="btn3d__front" data-en="Send Email">Отправить email</span>
+        </a>
+        <div class="cta__email-row">
+          <a href="mailto:me@ishtylecheva.ru" class="cta__email-link">me@ishtylecheva.ru</a>
+          <span class="copy3d">
+            <button type="button" class="cta__copy-btn copy3d__btn" aria-label="Скопировать email" data-copy="me@ishtylecheva.ru">
+              <span class="copy3d__back" aria-hidden="true"></span>
+              <span class="copy3d__front">
+                <svg class="copy3d__icon copy3d__icon--copy" width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M41.499 31.2838C41.499 31.2756 41.499 31.2674 45.532 31.2591C49.5649 31.2507 57.6308 31.2425 64.5588 31.1558C71.4867 31.0691 77.0323 30.9041 80.2408 30.8867C85.2582 30.8595 86.2188 31.2352 86.606 31.3747C86.8009 31.445 86.9241 31.6597 86.9758 40.1591C87.0276 48.6585 86.9866 65.4733 86.9425 74.3123C86.8984 83.1514 86.8524 83.5052 86.7932 83.8944C86.5325 85.6102 86.2346 87.4548 86.1028 88.8065C86.0562 89.2848 85.7817 89.2955 81.5253 89.4634C77.2688 89.6312 68.9698 89.9442 62.6663 90.201C56.3629 90.4578 52.3064 90.6489 49.5526 90.6702C45.4686 90.7017 42.9947 90.278 41.067 90.0767C38.8379 89.844 37.8527 89.4089 37.396 89.2191C37.1825 89.1304 37.056 88.9533 37.0134 88.7111C36.9707 88.4688 37.0285 88.1402 37.2087 79.3329C37.3889 70.5256 37.6898 53.2496 37.873 44.2212C38.0563 35.1929 38.1128 34.9357 38.2114 34.5658C38.6683 32.8514 39.2193 31.7687 40.0701 31.1685C40.3372 31.0445 40.6265 30.9453 40.8776 30.866C41.1287 30.7866 41.3329 30.7301 41.5432 30.6719" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M68.9619 31.4095C68.9619 31.3949 68.9619 31.3803 68.9752 28.3157C68.9885 25.251 69.015 19.1367 68.989 15.7677C68.9596 11.959 68.7729 11.2705 68.591 10.8635C68.4985 10.6564 68.1628 10.6023 61.2946 10.775C54.4264 10.9476 40.9738 11.3881 33.3131 11.7379C25.6524 12.0878 24.1912 12.3337 22.8088 12.5249C18.0928 13.1773 16.2768 13.3919 16.0481 13.4509C15.8044 13.5138 16.5497 14.0997 16.8558 15.1847C17.0619 15.9152 17.2445 17.0429 17.2425 23.8708C17.2405 30.6988 17.0161 43.2009 16.9764 50.2848C16.9368 57.3688 17.0888 58.6556 17.2256 60.2315C17.5204 63.6298 17.6888 65.6925 18.0751 65.9629C18.7312 66.4222 20.6201 66.2582 23.6403 66.5668C25.4254 66.7493 27.7488 66.6731 30.0544 66.4983C32.3601 66.3236 34.5842 65.973 35.8275 65.7751C37.0708 65.5772 37.266 65.5428 37.467 65.5072" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg class="copy3d__icon copy3d__icon--check" width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.1719 49.6677C16.1719 49.646 16.4997 49.7395 17.9575 50.6841C21.2219 52.7992 24.3247 56.0129 26.8642 58.39C29.008 60.3967 31.5452 62.5879 34.3521 65.4886C37.166 68.3965 39.0213 70.1573 39.6679 70.6216C39.9458 70.8212 40.3242 70.5348 44.3039 65.7073C48.2836 60.8798 55.9049 51.4143 62.2121 44.1616C68.5193 36.9089 73.2814 32.1558 76.5132 28.8443C79.745 25.5329 81.302 23.807 82.7162 21.8091" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+          </span>
+        </div>
+      </div>
+      <div class="cta__socials">
+        <a href="https://t.me/e_ishty" target="_blank" rel="noopener" class="social-circle" aria-label="Telegram">
+          <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.5216 43.4109L12 45.5C12 45.5 6.85486 47.5024 6.0013 48.5C5.83851 48.6903 5.77318 49.1016 6.01274 49.2204C7.06854 49.7443 19.5 54.1156 20.5 54.5578C21.5 55 27.9867 56.9551 28.5421 56.5273C29.1549 56.0552 30.0319 55.3158 31.1139 54.5578C32.9751 53.254 35.2906 51.488 37.3722 50.294C38.5993 49.5902 42.5143 46.7644 47.3735 43.4272C49.7276 41.8104 51.7412 40.2707 59.0832 36.4357C63.7647 33.9904 68.932 30.2148 68.296 31.6567C68.141 32.008 67.0496 33.4904 64.1078 36.2874C61.7551 38.5245 59.7228 40.308 55.7787 44.2078C52.4331 47.5158 46.5813 53.4256 43.1003 56.8031C38.655 61.1163 37.194 62.401 37.4454 62.9778C37.6955 63.5515 38.1271 64.0609 38.6141 64.4672C39.8799 65.5231 42.2354 67.011 47.4879 71.0933C50.0005 73.0461 53.4857 75.0572 56.9603 77.5843C61.2988 80.7398 67.0774 88.5544 69.3275 86.3745C69.7598 85.9557 70.2721 84.555 70.8839 81.0934C71.308 78.6935 71.8492 75.0459 73.4576 67.2806C75.0661 59.5153 77.663 47.9818 79.5525 40.4572C81.442 32.9327 82.5333 29.4994 83.4272 27.2262C84.7786 23.7898 85.3901 21.7206 85.2444 20.058C85.1209 18.6493 84.9774 17.3166 84.2465 17.1196C83.6153 16.9495 80.8671 17.2582 77.0911 17.992C75.0354 18.3916 69.5994 20.103 62.4611 22.7161C59.6253 23.7542 56.9587 24.4739 53.5052 25.9203C50.25 27.2835 47.1516 28.6188 42.7377 30.4073C38.6488 32.0641 34.1258 34.4465 29.0722 36.9781C22.9565 40.0417 19.0512 42.2422 16.5216 43.4109Z" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/evgenia-ishtylecheva-2a24bb366/" target="_blank" rel="noopener" class="social-circle" aria-label="LinkedIn">
+          <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.7689 31.7464C15.7689 31.7639 15.7689 31.7813 15.613 39.8722C15.4571 47.963 15.1453 64.1266 15.0242 73.2182C14.9032 82.3097 14.9822 83.8395 15.0433 84.7464C15.1044 85.6534 15.1452 85.8912 15.4095 86.1981C16.0722 86.9675 16.8481 87.4321 17.2909 87.7078C19.3132 88.9666 23.8749 86.9455 26.2312 86.9053C26.7007 86.8973 27.0093 87.0489 27.1952 86.9663C27.3811 86.8837 27.4335 86.611 27.5656 82.5125C27.6978 78.414 27.908 70.498 27.952 62.271C27.9959 54.044 27.8671 45.7458 27.8171 40.5041C27.767 35.2625 27.7997 33.3288 26.1062 32.3206C20.9922 31.2884 17.1949 31.2213 16.5927 31.1547C16.2638 31.1306 15.8873 31.1259 15.5166 31.1201" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.3985 21.1183C17.911 21.1378 23.5035 21.015 25.8421 19.9132C26.5558 19.577 26.8963 19.0471 27.2861 18.1826C28.5146 15.4587 27.7928 12.7837 27.2567 11.5619C26.6727 10.2312 25.4289 9.56846 23.5214 8.63338C21.3164 7.55249 17.3098 8.40724 15.7055 9.11092C14.5745 9.60703 14.3472 11.0439 14.0613 13.0498C13.6344 16.0441 14.6796 17.7353 15.1356 18.6256C15.2651 18.8268 15.4138 19.0155 15.5651 19.2052C15.7164 19.3948 15.8657 19.5796 16.3177 19.9569" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M39.7553 28.5648C39.7553 28.5734 39.7553 28.5819 39.7553 33.102C39.7553 37.622 39.7553 46.6533 39.5723 54.6132C39.3894 62.5731 39.0235 69.1881 38.9683 74.3888C38.9131 79.5895 39.1797 83.1754 39.4315 85.0765C39.6834 86.9776 39.9125 87.0852 40.452 87.1507C43.2002 87.4842 45.2491 87.6122 48.0795 87.7245C48.6487 87.747 48.8861 87.7856 49.0729 87.7068C49.2598 87.628 49.3889 87.4293 50.0292 82.088C50.6695 76.7467 51.817 66.2686 52.6654 59.9078C53.7756 51.5841 54.6673 49.357 54.906 48.7962C55.4095 47.6135 56.5467 46.4295 58.027 45.2048C60.1388 43.4576 63.051 43.6103 64.7295 43.9147C67.5971 44.4346 70.6154 48.4115 71.516 50.8075C72.1131 52.3961 72.6838 55.4612 73.2183 61.9615C73.7527 68.4619 74.0669 78.3573 74.3038 83.3632C74.5408 88.3692 74.6908 88.1858 75.6337 88.0882C80.3023 87.6046 81.6957 88.0497 83.0565 87.7388C83.6072 87.613 83.5485 86.8025 83.8479 84.1611C84.1473 81.5197 84.7232 76.8805 85.1544 69.8965C85.5856 62.9124 85.8546 53.7241 85.9496 48.7744C86.0528 43.393 85.4392 41.6519 84.6669 39.4272C83.853 37.0826 82.3022 35.4469 79.4686 33.1154C77.6967 31.6574 75.5222 30.7725 73.7752 30.0662C72.4223 29.5191 68.5608 29.4705 63.531 29.3782C59.6464 29.3069 56.3794 30.6175 54.8837 31.6247C51.3944 33.9745 50.0841 37.5311 49.2139 39.3617C49.0919 39.6184 48.9587 39.829 48.8716 39.1485C48.2999 34.6822 49.3523 32.7748 49.4712 31.0693C49.6388 28.6634 49.5796 26.8371 49.5316 26.4593C49.4256 25.6255 47.2027 26.5598 44.5063 26.8138C42.7393 26.9998 41.4705 27.277 40.819 27.4853C40.5198 27.5834 40.2846 27.6659 39.978 27.8102" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="cta__photo-wrap">
+      <div class="cta__photo-card reveal" style="--d:0s" aria-hidden="true"></div>
+      <div class="cta__photo reveal" style="--d:.18s">
+        <img src="assets/photos/photo-1-web.jpg" alt="Евгения Иштылечева">
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__text reveal" style="--d:0s"><span data-en="Evgeniya Ishtylecheva © ">Евгения Иштылечева © </span><span id="footerYear"></span></p>
+      <p class="site-footer__text site-footer__credit reveal" style="--d:.1s">
+        Developed by
+        <a href="https://marina-ux.netlify.app/" target="_blank" rel="noopener" class="site-footer__link">Marina Medvetskaia</a>
+      </p>
+    </div>
+  </footer>
+</section>
+
+</main>
+
+<script>
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+(function () {
+  var toggle = document.getElementById('langToggle');
+  var menu = document.getElementById('langMenu');
+  var code = document.getElementById('langCode');
+  if (!toggle || !menu) return;
+
+  function closeMenu() {
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var isOpen = menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  menu.querySelectorAll('.site-header__lang-option').forEach(function (option) {
+    option.addEventListener('click', function () {
+      menu.querySelectorAll('.site-header__lang-option').forEach(function (o) {
+        o.classList.remove('is-active');
+      });
+      option.classList.add('is-active');
+      code.textContent = option.getAttribute('data-code');
+      window.applyLang(option.getAttribute('data-lang'));
+      closeMenu();
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!menu.contains(e.target) && e.target !== toggle) closeMenu();
+  });
+})();
+
+(function () {
+  var toggle = document.getElementById('mobileMenuToggle');
+  var menu = document.getElementById('mobileMenu');
+  if (!toggle || !menu) return;
+
+  function setOpen(isOpen) {
+    toggle.classList.toggle('is-open', isOpen);
+    menu.classList.toggle('is-open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    document.body.classList.toggle('mobile-menu-open', isOpen);
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!toggle.classList.contains('is-open'));
+  });
+
+  menu.querySelectorAll('.mobile-menu__link').forEach(function (link) {
+    link.addEventListener('click', function () { setOpen(false); });
+  });
+
+  menu.querySelectorAll('.mobile-menu__lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      menu.querySelectorAll('.mobile-menu__lang-btn').forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+
+      var desktopCode = document.getElementById('langCode');
+      if (desktopCode) desktopCode.textContent = btn.getAttribute('data-code');
+
+      var desktopMenu = document.getElementById('langMenu');
+      if (desktopMenu) {
+        desktopMenu.querySelectorAll('.site-header__lang-option').forEach(function (o) {
+          o.classList.toggle('is-active', o.getAttribute('data-lang') === btn.getAttribute('data-lang'));
+        });
+      }
+
+      window.applyLang(btn.getAttribute('data-lang'));
+    });
+  });
+})();
+
+(function () {
+  window.applyLang = function (lang, skipSave) {
+    document.documentElement.lang = lang === 'en' ? 'en' : 'ru';
+    document.querySelectorAll('[data-en], [data-en-html]').forEach(function (el) {
+      var isHtml = el.hasAttribute('data-en-html');
+      if (el.dataset.ruCached === undefined) {
+        el.dataset.ruCached = isHtml ? el.innerHTML : el.textContent;
+      }
+      if (lang === 'en') {
+        if (isHtml) el.innerHTML = el.getAttribute('data-en-html');
+        else el.textContent = el.getAttribute('data-en');
+      } else {
+        if (isHtml) el.innerHTML = el.dataset.ruCached;
+        else el.textContent = el.dataset.ruCached;
+      }
+    });
+    if (!skipSave) {
+      try { localStorage.setItem('siteLang', lang); } catch (e) {}
+    }
+
+    var code = lang === 'en' ? 'EN' : 'RU';
+    var desktopCode = document.getElementById('langCode');
+    if (desktopCode) desktopCode.textContent = code;
+    document.querySelectorAll('.site-header__lang-option').forEach(function (o) {
+      o.classList.toggle('is-active', o.getAttribute('data-lang') === lang);
+    });
+    document.querySelectorAll('.mobile-menu__lang-btn').forEach(function (b) {
+      b.classList.toggle('is-active', b.getAttribute('data-lang') === lang);
+    });
+  };
+
+  try {
+    var savedLang = localStorage.getItem('siteLang');
+    if (savedLang === 'en') window.applyLang('en', true);
+  } catch (e) {}
+})();
+
+(function () {
+  var links = document.querySelectorAll('.site-header__link, .js-scroll-center');
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var hash = link.getAttribute('href');
+      if (!hash || hash.charAt(0) !== '#') return;
+      var target = document.querySelector(hash);
+      if (!target) return;
+
+      e.preventDefault();
+
+      var rect = target.getBoundingClientRect();
+      var sectionHeight = rect.height;
+      var viewportHeight = window.innerHeight;
+      var docTop = rect.top + window.pageYOffset;
+      var destination = docTop + sectionHeight / 2 - viewportHeight / 2;
+
+      window.scrollTo({ top: Math.max(0, destination), behavior: 'smooth' });
+    });
+  });
+})();
+
+(function () {
+  var N = 3;
+  var cardsEl = document.getElementById('projectsCards');
+  if (!cardsEl) return;
+
+  var visual = document.querySelector('.projects__visual');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.projects__card'));
+  var segs = Array.prototype.slice.call(document.querySelectorAll('.projects__seg'));
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var progress = 0;
+  var target = 0;
+
+  var OFFSETS = [0, 0.34, 0.60, 0.80];
+  var SCALES  = [1, 0.90, 0.81, 0.73];
+
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function maxVisibleDepth() {
+    var w = window.innerWidth;
+    if (w <= 639) return 0;
+    if (w <= 1023) return 1;
+    return 3;
+  }
+
+  function isPeek() {
+    return window.innerWidth <= 1023;
+  }
+
+  function wrapSigned(x, n) {
+    x = x % n;
+    if (x > n / 2) x -= n;
+    if (x <= -n / 2) x += n;
+    return x;
+  }
+
+  function renderPeek(p) {
+    var activeIndex = ((Math.round(p) % N) + N) % N;
+    var w = cardsEl.offsetWidth;
+
+    cards.forEach(function (card) {
+      var i = parseInt(card.dataset.i, 10);
+      var delta = wrapSigned(i - p, N);
+      var ad = Math.abs(delta);
+
+      var scale = (ad <= 1 ? (1 - 0.30 * ad) : Math.max(0.55, 0.70 - 0.20 * (ad - 1))) * 0.75;
+      var offsetXfrac = delta * 0.66;
+      var z = Math.round(50 - ad * 10);
+
+      // pull the side cards 50px closer to the center so they visibly
+      // overlap the active card again, ramped in smoothly toward |delta|=1
+      // so the active card itself (delta 0) is untouched
+      var px = offsetXfrac * w - Math.sign(delta) * Math.min(ad, 1) * 50;
+      card.style.transform = 'translateX(' + px + 'px) scale(' + scale + ')';
+      card.style.opacity = 1;
+      card.style.setProperty('--dim', 0);
+      card.style.zIndex = z;
+      card.style.pointerEvents = '';
+    });
+
+    segs.forEach(function (seg) {
+      var i = parseInt(seg.dataset.i, 10);
+      seg.classList.toggle('is-active', i === activeIndex);
+    });
+  }
+
+  function renderCascade(p) {
+    var activeIndex = ((Math.floor(p) % N) + N) % N;
+    var w = cardsEl.offsetWidth;
+    var maxD = maxVisibleDepth();
+
+    cards.forEach(function (card) {
+      var i = parseInt(card.dataset.i, 10);
+      var wrapped = ((p - i) % N + N) % N;
+      var scale, opacity, offsetXfrac, z;
+
+      if (wrapped < 1) {
+        var t = wrapped;
+        var tEase = easeOutCubic(t);
+        scale = 1 + 0.5 * tEase;
+        opacity = 1 - tEase;
+        offsetXfrac = -0.22 * tEase;
+        z = 50;
+        card.style.pointerEvents = t < 0.05 ? '' : 'none';
+      } else {
+        var d = N - wrapped;
+        // Interpolate continuously between the OFFSETS/SCALES depth slots
+        // instead of rounding to the nearest one. Rounding made a queued
+        // card jump discretely between slots, and for part of every
+        // transition it rounded into a slot another card already occupied
+        // (or into the front card's own slot) — cards would visually merge
+        // and only 2 of the 3 ever looked distinct at once.
+        var dClamped = Math.min(3, Math.max(0, d));
+        var lo = Math.floor(dClamped);
+        var hi = Math.min(3, lo + 1);
+        var frac = dClamped - lo;
+        scale = SCALES[lo] + (SCALES[hi] - SCALES[lo]) * frac;
+        offsetXfrac = -(OFFSETS[lo] + (OFFSETS[hi] - OFFSETS[lo]) * frac);
+        opacity = d > maxD ? 0 : 1;
+        z = Math.round(50 - d * 10);
+        card.style.pointerEvents = d > maxD ? 'none' : '';
+      }
+
+      var px = offsetXfrac * w;
+      card.style.transform = 'translateX(' + px + 'px) scale(' + scale + ')';
+      card.style.opacity = Math.max(0, Math.min(1, opacity));
+      card.style.zIndex = z;
+    });
+
+    segs.forEach(function (seg) {
+      var i = parseInt(seg.dataset.i, 10);
+      seg.classList.toggle('is-active', i === activeIndex);
+    });
+  }
+
+  var cardsEntered = reduced;
+  var ENTRANCE_DURATION = 0.7;
+  var ENTRANCE_STAGGER = 0.12;
+
+  cards.forEach(function (card) {
+    if (!cardsEntered) {
+      card.style.opacity = '0';
+      card.style.transform = 'translateX(-60%) scale(0.4)';
+    }
+  });
+
+  function playEntrance() {
+    if (cardsEntered) return;
+    cardsEntered = true;
+    cards.forEach(function (card, idx) {
+      var delay = idx * ENTRANCE_STAGGER;
+      card.style.transition =
+        'transform ' + ENTRANCE_DURATION + 's cubic-bezier(.16,.84,.44,1) ' + delay + 's, ' +
+        'opacity ' + ENTRANCE_DURATION + 's ease ' + delay + 's';
+    });
+    render(progress);
+    setTimeout(function () {
+      cards.forEach(function (card) { card.style.transition = ''; });
+    }, (ENTRANCE_DURATION + cards.length * ENTRANCE_STAGGER) * 1000 + 60);
+  }
+
+  if (!cardsEntered) {
+    if ('IntersectionObserver' in window) {
+      var entranceIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            playEntrance();
+            entranceIO.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      entranceIO.observe(visual);
+    } else {
+      cardsEntered = true;
+    }
+  }
+
+  function render(p) {
+    if (!cardsEntered) return;
+    if (isPeek()) renderPeek(p);
+    else renderCascade(p);
+  }
+
+  function tick() {
+    progress += (target - progress) * (reduced ? 1 : 0.045);
+    render(progress);
+    requestAnimationFrame(tick);
+  }
+
+  function setTargetToIndex(i) {
+    // base off the nearest whole step, not the raw (often mid-flight,
+    // fractional) target — otherwise a click during an easing/wheel
+    // transition could compute a candidate that overshoots or lands short,
+    // which read as "the dots don't always work"
+    var base = Math.round(target);
+    var k = Math.floor(base / N);
+    var candidate = k * N + i;
+    if (candidate < base) candidate += N;
+    target = candidate;
+  }
+
+  function stepIndex(dir) {
+    target = Math.round(target) + dir;
+  }
+
+  var idleTimer = null;
+  function scheduleIdleSnap() {
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(function () {
+      target = Math.round(target);
+    }, 450);
+  }
+
+  visual.addEventListener('wheel', function (e) {
+    if (isPeek()) return;
+    e.preventDefault();
+    target = Math.max(0, target + e.deltaY * 0.0026);
+    scheduleIdleSnap();
+  }, { passive: false });
+
+  var touchStartX = null, touchStartY = null, touchDragging = false;
+  cardsEl.addEventListener('touchstart', function (e) {
+    var t = e.touches[0];
+    touchStartX = t.clientX;
+    touchStartY = t.clientY;
+    touchDragging = false;
+  }, { passive: true });
+
+  cardsEl.addEventListener('touchmove', function (e) {
+    if (touchStartX === null) return;
+    var t = e.touches[0];
+    var dx = t.clientX - touchStartX;
+    var dy = t.clientY - touchStartY;
+    if (!touchDragging && Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+      touchDragging = true;
+    }
+    if (touchDragging) e.preventDefault();
+  }, { passive: false });
+
+  cardsEl.addEventListener('touchend', function (e) {
+    if (touchStartX === null) return;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - touchStartX;
+    if (touchDragging && Math.abs(dx) > 40) {
+      stepIndex(dx < 0 ? 1 : -1);
+    }
+    touchStartX = null;
+    touchStartY = null;
+    touchDragging = false;
+  }, { passive: true });
+
+  function goToIndex(i) {
+    if (isPeek()) {
+      var cur = Math.round(target);
+      var curMod = ((cur % N) + N) % N;
+      target = cur + wrapSigned(i - curMod, N);
+    } else {
+      setTargetToIndex(i);
+    }
+  }
+
+  segs.forEach(function (seg) {
+    seg.addEventListener('click', function () {
+      goToIndex(parseInt(seg.dataset.i, 10));
+    });
+  });
+
+  cards.forEach(function (card) {
+    var i = parseInt(card.dataset.i, 10);
+    card.addEventListener('click', function (e) {
+      var activeIdx = ((Math.round(target) % N) + N) % N;
+      if (i === activeIdx) return;
+      e.preventDefault();
+      goToIndex(i);
+    });
+  });
+
+  window.addEventListener('resize', function () { render(progress); });
+
+  render(progress);
+  requestAnimationFrame(tick);
+})();
+
+(function () {
+  document.querySelectorAll('.cta__copy-btn').forEach(function (btn) {
+    var hideTimer;
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      navigator.clipboard.writeText(text).then(function () {
+        clearTimeout(hideTimer);
+        btn.classList.add('is-copied');
+        hideTimer = setTimeout(function () {
+          btn.classList.remove('is-copied');
+        }, 1500);
+      });
+    });
+  });
+})();
+</script>
+<script>
+(function () {
+  var els = document.querySelectorAll('.reveal');
+
+  var heroEls = document.querySelectorAll('.hero .reveal');
+  requestAnimationFrame(function () {
+    heroEls.forEach(function (el) { el.classList.add('is-visible'); });
+  });
+
+  var rest = Array.prototype.filter.call(els, function (el) {
+    return !el.closest('.hero') && !el.closest('.site-footer');
+  });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -120px 0px' });
+
+    rest.forEach(function (el) { io.observe(el); });
+  } else {
+    rest.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* the footer is the very last thing on the page — the -120px shrink above
+     means its top edge can never reach the shrunk boundary even at max
+     scroll, so it needs its own, unshrunk observer or it stays invisible forever */
+  var footerEls = Array.prototype.filter.call(els, function (el) {
+    return el.closest('.site-footer');
+  });
+
+  if ('IntersectionObserver' in window) {
+    var footerIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          footerIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.01 });
+
+    footerEls.forEach(function (el) { footerIO.observe(el); });
+  } else {
+    footerEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+})();
+
+(function () {
+  var nav = document.querySelector('.services__nav');
+  var track = document.querySelector('.services__grid');
+  var dotsWrap = document.querySelector('.services__dots');
+  if (!nav || !track || !dotsWrap) return;
+
+  var cards = track.querySelectorAll('.service-card');
+  var dots = [];
+  var pageStarts = [];
+
+  function step() {
+    var gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 16);
+    return cards[0].getBoundingClientRect().width + gap;
+  }
+
+  function buildPages() {
+    var maxScroll = track.scrollWidth - track.clientWidth;
+    var s = step();
+    pageStarts = [0];
+    if (maxScroll > 4) {
+      var pos = 0;
+      while (pos < maxScroll - 4) {
+        pos = Math.min(pos + s, maxScroll);
+        pageStarts.push(pos);
+      }
+    }
+    return pageStarts;
+  }
+
+  function renderDots() {
+    buildPages();
+    dotsWrap.innerHTML = '';
+    dots = pageStarts.map(function (pos, i) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'services__dot';
+      dot.setAttribute('aria-label', 'Карточка ' + (i + 1));
+      dot.addEventListener('click', function () {
+        track.scrollTo({ left: pos, behavior: 'smooth' });
+      });
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
+    updateActiveDot();
+  }
+
+  function updateActiveDot() {
+    if (!dots.length) return;
+    var idx = 0;
+    var best = Infinity;
+    pageStarts.forEach(function (pos, i) {
+      var d = Math.abs(track.scrollLeft - pos);
+      if (d < best) { best = d; idx = i; }
+    });
+    dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
+  }
+
+  var ticking = false;
+  track.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      updateActiveDot();
+      ticking = false;
+    });
+  });
+
+  var resizeTimer;
+  function scheduleRender() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(renderDots, 150);
+  }
+
+  window.addEventListener('resize', scheduleRender);
+
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(scheduleRender).observe(track);
+  }
+
+  renderDots();
+  window.addEventListener('load', renderDots);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(renderDots);
+  }
+})();
+</script>
+
+</body>
+</html>
