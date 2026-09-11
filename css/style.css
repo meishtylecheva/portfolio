@@ -1035,7 +1035,7 @@ body.mobile-menu-open {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.55);
   border: none;
   box-shadow: 0 6px 6px rgba(0, 4, 14, 0.15), 0 0 20px rgba(0, 4, 14, 0.08);
   /* box-shadow keeps its own quick hover timing; opacity/transform ride along
@@ -1045,6 +1045,18 @@ body.mobile-menu-open {
   transition-delay: 0s, var(--d, 0s), var(--d, 0s);
 }
 
+/* This used to be a live backdrop-filter blur sampling the gradient behind
+   each card. Dropped entirely: real Chrome renders backdrop-filter at a
+   reduced raster quality while scrolling (to keep scrolling smooth) and
+   doesn't reliably refresh it to full quality afterwards — the card stayed
+   looking "blurry" (text included, since the whole tile gets the coarse
+   raster) until something elsewhere forced a full repaint, e.g. scrolling
+   all the way to the footer and back. That's a scroll-performance
+   characteristic of backdrop-filter itself, not something fixable by
+   adjusting isolation/will-change/transform on this element.
+   A static gradient wash gives the same glass sheen without ever sampling
+   "what's behind" — nothing to rasterize at reduced quality, so it can't
+   go blurry on scroll in any browser. */
 .process-card::before,
 .service-card::before {
   content: "";
@@ -1053,40 +1065,7 @@ body.mobile-menu-open {
   z-index: 0;
   border-radius: inherit;
   pointer-events: none;
-}
-
-/* the glass blur only runs where backdrop-filter is actually supported and
-   enabled — this is also the fallback for Chromium "turbo"/data-saver
-   browsers (Yandex Browser, Atom, Sputnik) that drop backdrop-filter
-   silently: without this @supports guard those browsers were left with no
-   usable background layer, and the card's own rgba() tint plus whatever
-   was behind it read as a blurred card. The plain rgba(255, 255, 255, 0.25)
-   background already set on .service-card/.process-card itself is that
-   fallback: a flat translucent card with sharp text, no blur attempted.
-
-   Deliberately NOT combining this with the old `filter: url(#glass-distortion)`
-   SVG warp on the same element — real (non-headless) Chrome has a known
-   rendering bug where backdrop-filter + a regular filter on one element
-   can rasterize the whole composited layer instead of sampling only what's
-   behind it, which visibly blurred the card's own text/icons sitting in
-   front. Pure backdrop-filter alone does not have this problem.
-
-   Also deliberately NOT forcing this layer onto its own compositing layer
-   via will-change/transform: translateZ(0) — the card itself (the parent)
-   already runs an opacity/transform transition when it scrolls into view
-   (see .reveal). Pre-promoting this pseudo-element's layer while that
-   transition is running triggered another real-Chrome bug: the
-   backdrop-filter's backdrop snapshot got captured once, then stayed
-   frozen/blurry-looking until something forced a relayout (e.g. scrolling
-   past the card and back). Leaving compositing to the browser's default
-   timing means the backdrop-filter re-samples normally once the reveal
-   transition settles. */
-@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
-  .process-card::before,
-  .service-card::before {
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-  }
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.05));
 }
 
 .process-card::after,
@@ -1427,7 +1406,7 @@ body.mobile-menu-open {
   overflow: hidden;
   border-radius: 10px;
   padding: 16px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.55);
   border: none;
   box-shadow: 0 6px 6px rgba(0, 4, 14, 0.15), 0 0 20px rgba(0, 4, 14, 0.08);
   /* box-shadow keeps its own quick hover timing; opacity/transform ride along
