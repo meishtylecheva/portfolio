@@ -1055,27 +1055,31 @@ body.mobile-menu-open {
   pointer-events: none;
 }
 
-/* the glass blur/distortion only runs where backdrop-filter is actually
-   supported and enabled. Chromium-based "turbo"/data-saver browsers
-   (Yandex Browser, Atom, Sputnik) either drop backdrop-filter silently or
-   proxy the page through a compressed snapshot that can't render it —
-   without this @supports guard, those browsers were left with no usable
-   background layer at all, and the card's own rgba() tint plus the
-   inherited page background made the text/icons above it read as blurred.
-   The plain rgba(255, 255, 255, 0.25) background already set on
-   .service-card/.process-card itself is the fallback: a flat translucent
-   card with sharp text, no blur attempted. */
+/* the glass blur only runs where backdrop-filter is actually supported and
+   enabled — this is also the fallback for Chromium "turbo"/data-saver
+   browsers (Yandex Browser, Atom, Sputnik) that drop backdrop-filter
+   silently: without this @supports guard those browsers were left with no
+   usable background layer, and the card's own rgba() tint plus whatever
+   was behind it read as a blurred card. The plain rgba(255, 255, 255, 0.25)
+   background already set on .service-card/.process-card itself is that
+   fallback: a flat translucent card with sharp text, no blur attempted.
+
+   Deliberately NOT combining this with the old `filter: url(#glass-distortion)`
+   SVG warp on the same element — real (non-headless) Chrome has a known
+   rendering bug where backdrop-filter + a regular filter on one element
+   can rasterize the whole composited layer instead of sampling only what's
+   behind it, which visibly blurred the card's own text/icons sitting in
+   front. Pure backdrop-filter alone does not have this problem. */
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
   .process-card::before,
   .service-card::before {
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
-    filter: url(#glass-distortion);
     /* force this layer onto its own compositing layer immediately so the
-       backdrop-filter + SVG distortion is fully rendered from frame one —
-       otherwise the browser computes it a beat after the card's opacity/
-       transform reveal, making the glass look like it "loads in" separately */
-    will-change: backdrop-filter, transform;
+       backdrop-filter is fully rendered from frame one — otherwise the
+       browser computes it a beat after the card's opacity/transform
+       reveal, making the glass look like it "loads in" separately */
+    will-change: backdrop-filter;
     transform: translateZ(0);
   }
 }
