@@ -1069,18 +1069,23 @@ body.mobile-menu-open {
    rendering bug where backdrop-filter + a regular filter on one element
    can rasterize the whole composited layer instead of sampling only what's
    behind it, which visibly blurred the card's own text/icons sitting in
-   front. Pure backdrop-filter alone does not have this problem. */
+   front. Pure backdrop-filter alone does not have this problem.
+
+   Also deliberately NOT forcing this layer onto its own compositing layer
+   via will-change/transform: translateZ(0) — the card itself (the parent)
+   already runs an opacity/transform transition when it scrolls into view
+   (see .reveal). Pre-promoting this pseudo-element's layer while that
+   transition is running triggered another real-Chrome bug: the
+   backdrop-filter's backdrop snapshot got captured once, then stayed
+   frozen/blurry-looking until something forced a relayout (e.g. scrolling
+   past the card and back). Leaving compositing to the browser's default
+   timing means the backdrop-filter re-samples normally once the reveal
+   transition settles. */
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
   .process-card::before,
   .service-card::before {
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
-    /* force this layer onto its own compositing layer immediately so the
-       backdrop-filter is fully rendered from frame one — otherwise the
-       browser computes it a beat after the card's opacity/transform
-       reveal, making the glass look like it "loads in" separately */
-    will-change: backdrop-filter;
-    transform: translateZ(0);
   }
 }
 
